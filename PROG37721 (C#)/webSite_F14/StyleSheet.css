@@ -1,0 +1,35 @@
+﻿#form1 {
+    color: #00FF00;
+    background-color: #000000;
+}
+
+html {
+    color: #00FF00;
+    background-color: #000000;
+}
+
+table {
+    color: #00FF00;
+    background-color: #000000;
+    text-align: center;
+}
+
+a:link {
+    color: hotpink;
+}
+
+a:hover {
+    color: yellow;
+}
+
+a:visited {
+    color: orange;
+}
+
+th {
+    background-color: darkslategrey;
+}
+
+tr:nth-child(2n+1) {
+    background-color: #A80000;
+}

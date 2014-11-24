@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<!--DAKOTA MCCUTCHEON ID#991 321 209-->
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>EX 3</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link rel="stylesheet" href="css/jquery.mobile.css" />
+    <link rel="stylesheet" href="css/McCutDak.min.css" />
+    <link rel="stylesheet" href="css/jquery.mobile.icons.min.css" />
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery.mobile.js"></script>
+    <script>
+    </script>
+   <style>.ui-body-a, .ui-page-theme-a .ui-body-inherit, html .ui-bar-a .ui-body-inherit, html .ui-body-a .ui-body-inherit, html body .ui-group-theme-a .ui-body-inherit, html .ui-panel-page-container-a{text-align: center;}form{text-align: center;}</style>
+</head>
+<body>
+<div data-role="page" id="ex03" data-theme="a">
+    <div id="myPanel" data-role="panel">
+        <!-- panel content goes here -->
+        <h5>Dakota McCutcheon</h5>
+        <h5>Student # 991 321 209</h5>
+        <h5>PCOMP (Computer Programming)</h5>
+        <img src="imgs/4.jpg" width="100%"/>
+    </div>
+
+    <header data-role="header">
+        <h1 class="ui-title">Dakota McCutcheon</h1>
+    </header>
+    <br><br>
+    <section class="ui-content" role="main">
+        <div><a class="ui-btn ui-shadow ui-corner-all" href="#myPanel">Dakota McCutcheon</a></div>
+        <br><br>
+        <div data-role="collapsible">
+            <h4>Room Colours</h4>
+            <fieldset data-role="controlgroup">
+                <legend>Program Checkboxes</legend>
+                <input type="checkbox" name="Razzle" id="razzle" value="Razzle Dazzle Rose"><label for="razzle">Razzle Dazzle Rose</label>
+                <input type="checkbox" name="Falu" id="falu" value="Falu Red"><label for="falu">Falu Red</label>
+                <input type="checkbox" name="Razz" id="razz" value="Razzmatazz"><label for="razz">Razzmatazz</label>
+                <input type="checkbox" name="Gam" id="gam" value="Gamboge"><label for="gam">Gamboge</label>
+                <br>
+                <input type="radio" name="room" id="mancave" value="on" checked="checked">
+                <label for="mancave">Man Cave</label>
+                <input type="radio" name="room" id="virtual" value="off">
+                <label for="virtual">Virtual Reality Gaming Room</label>
+                <input type="radio" name="room" id="tv" value="off">
+                <label for="tv">400in. Tv Room</label>
+            </fieldset>
+        </div>
+        <br><br>
+        <div data-role="collapsible">
+            <h4>Pictures</h4>
+            <img src="imgs/2.jpg" height="500" width="425"/>
+            <img src="imgs/3.jpg" height="500" width="425"/>
+        </div>
+        <br><br>
+
+        <div>
+            <ul data-role="listview" data-filter="true">
+                <li>Leafy Seadragon</li>
+                <li>Sun Bear</li>
+                <li>Angora Rabbit</li>
+                <li>Red Panda</li>
+                <li>Emperor Tamarin</li>
+                <li>Axolotl</li>
+                <li>Dumbo Octopus</li>
+                <li>Pygmy Marmoset</li>
+                <li>Yeti Crab</li>
+            </ul>
+        </div>
+        <br><br>
+        <div>
+            <form>
+                <label for="flip1">OSAP Available</label>
+                <input type="checkbox" data-role="flipswitch" name="flip1" id="flip1">
+            </form>
+            <br><hr><br>
+            <form>
+                <label for="flip2">International Student</label>
+                <input type="checkbox" data-role="flipswitch" name="flip2" id="flip2" checked="">
+            </form>
+        </div>
+        <br><br>
+        <div>
+            <form>
+                <div data-role="rangeslider">
+                    <label for="range1">Age:</label>
+                    <input type="range" name="range1" id="range1" min="18" max="25" value="18">
+                </div>
+            </form>
+            <form>
+                <div data-role="rangeslider">
+                    <label for="range2">Grades:</label>
+                    <input type="range" name="range2" id="range3" min="50" max="100" value="65">
+                    <label for="range2">Rangeslider:</label>
+                    <input type="range" name="range2" id="range2" min="50" max="100" value="90">
+                </div>
+            </form>
+        </div>
+    </section>
+    <br><br>
+    <footer data-role="footer">
+        <h4>Dakota PCOMP (Computer Programming) 991 321 209</h4>
+    </footer>
+</div>
+</body>
+</html>

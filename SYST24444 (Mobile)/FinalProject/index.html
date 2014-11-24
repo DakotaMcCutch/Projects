@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Final Project</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!--http://maps.google.com/maps/api/js?v=3&sensor=false&language=en&libraries=geometry"<script src="js/Chart.min.js"></script>-->
+	<script type="text/javascript" src="http://maps.google.com/maps/api/js?v=3&sensor=false&language=en"></script>
+	<script src="js/jquery.js"></script>
+	<script src="js/finalproj.js"></script>
+	<script src="js/jquery.mobile.js"></script>
+	<script src="js/Chart.js"></script>
+
+	<link rel="stylesheet" href="css/jquery.mobile.css" />
+	<link rel="stylesheet" href="css/themes/finalproj.css" />
+	<link rel="stylesheet" href="css/themes/finalproj.min.css" />
+	<link rel="stylesheet" href="css/themes/jquery.mobile.icons.min.css" />
+</head>
+<body>
+<!-- HOME -->
+<div data-role="page" id="home" data-theme="a">
+	<header data-role="header" data-add-back-btn="false" data-id="header">
+		<a href="#home" class="ui-btn ui-icon-home ui-btn-icon-notext ui-corner-all"></a>
+		<h1>Final Project</h1>
+		<a href="#about" class="ui-btn ui-icon-info ui-btn-icon-notext ui-corner-all"></a>
+	</header>
+	<div role="main" class="ui-content">
+		<ul data-role="listview" data-inset="true">
+			<li><a href="#text">TEXTUAL DISPLAY</a></li>
+			<li><a href="#graph">GRAPHICAL DISPLAY</a></li>
+			<li><a href="#geo">GEOGRAPHICAL REPRESENTATION</a></li>
+		</ul>
+		<p> The Organisation for Economic Co-operation and Development (OECD) (French: Organisation de coopération et de développement économiques, OCDE) is an international economic organisation of 34 countries founded in 1961 to stimulate economic progress and world trade. It is a forum of countries committed to democracy and the market economy, providing a platform to compare policy experiences, seek answers to common problems, identify good practices and coordinate domestic and international policies of its members.</p>
+		<p> The OECD originated in 1948 as the Organisation for European Economic Co-operation (OEEC),[1] led by Robert Marjolin of France, to help administer the Marshall Plan (which was rejected by the Soviet Union and its satellite states). This would be achieved by allocating American financial aid and implementing economic programs for the reconstruction of Europe after World War II, where similar efforts in the Economic Cooperation Act of 1948 of the United States of America, which stipulated the Marshall Plan that had also taken places elsewhere in the world to war-torn Republic of China and post-war Korea, but the American recovery program in Europe was the most successful one.</p>
+		<p> In 1961, the OEEC was reformed into the Organisation for Economic Co-operation and Development by the Convention on the Organisation for Economic Co-operation and Development and membership was extended to non-European states. Most OECD members are high-income economies with a very high Human Development Index (HDI) and are regarded as developed countries.
+			The OECD's headquarters are at the Château de la Muette in Paris, France. </p>
+	</div>
+	<footer data-role="footer" data-position="fixed" data-id="footer">
+	<span>
+	<div data-role="popup" id="sources" style="background-color:#FFF;">
+		<p><a href="http://stats.oecd.org/">Data Source</a></p>
+		<p><a href="http://en.wikipedia.org/wiki/Organisation_for_Economic_Co-operation_and_Development">Main Page Source</a></p>
+	</div>
+		<span class="footerCreds">Final Project<br>
+			SYST24444 - Mobile Web Development<br>
+			Computer Programmer<br>
+		<a href="#sources" data-rel="popup" style="color: blue;">Sources</a>
+		</span>
+	</span>
+	</footer>
+</div>
+
+<!-- DISPLAY TEXT -->
+<div data-role="page" id="text">
+	<header data-role="header" data-add-back-btn="false" data-id="header">
+		<a href="#home" class="ui-btn ui-icon-home ui-btn-icon-notext ui-corner-all"></a>
+		<h1>Final Project</h1>
+		<a href="#about" class="ui-btn ui-icon-info ui-btn-icon-notext ui-corner-all"></a>
+	</header>
+	<div role="main" class="ui-content">
+		<div class="ui-grid-a">
+			<div class="ui-block-a">
+				<h3>Select Countries: </h3>
+				<div class="ui-field-contain">
+					<fieldset data-role="controlgroup" id="dCountry">
+					</fieldset>
+				</div>
+			</div>
+			<div class="ui-block-b">
+				<h3>Select Years</h3>
+				<div class="ui-field-contain">
+					<fieldset data-role="controlgroup" id="dYear"></fieldset>
+				</div>
+			</div>
+		</div>
+		<div class="ui-grid-b">
+			<div class="ui-block-a"></div>
+			<div id="displayData" class="ui-block-b"></div>
+			<div class="ui-block-c"></div>
+		</div>
+	</div>
+	<footer data-role="footer" data-position="fixed" data-id="footer">
+		<span class="footerCreds">Final Project<br>
+			SYST24444 - Mobile Web Development<br>
+			Computer Programmer<br>
+		</span>
+	</footer>
+</div>
+
+<!-- DISPLAY GRAPH -->
+<div data-role="page" id="graph">
+	<header data-role="header" data-add-back-btn="false" data-id="header">
+		<a href="#home" class="ui-btn ui-icon-home ui-btn-icon-notext ui-corner-all"></a>
+		<h1>Final Project</h1>
+		<a href="#about" class="ui-btn ui-icon-info ui-btn-icon-notext ui-corner-all"></a>
+	</header>
+	<div role="main" class="ui-content">
+		<div id="title"></div>
+		<div id="legend"></div>
+		<canvas id="bar_graph"></canvas>
+	</div>
+	<footer data-role="footer" data-position="fixed" data-id="footer">
+	<span class="footerCreds">Final Project<br>
+			SYST24444 - Mobile Web Development<br>
+			Computer Programmer<br>
+	</span>
+	</footer>
+</div>
+
+<!-- DISPLAY GEOLOCATION -->
+<div data-role="page" id="geo">
+	<header data-role="header" data-add-back-btn="false" data-id="header">
+		<a href="#home" class="ui-btn ui-icon-home ui-btn-icon-notext ui-corner-all"></a>
+		<h1>Final Project</h1>
+		<a href="#about" class="ui-btn ui-icon-info ui-btn-icon-notext ui-corner-all"></a>
+	</header>
+	<div role="main" class="ui-content">
+		<div id="map_canvas"></div>
+	</div>
+	<footer data-role="footer" data-position="fixed" data-id="footer">
+	<span class="footerCreds">Final Project<br>
+			SYST24444 - Mobile Web Development<br>
+			Computer Programmer<br>
+	</span>
+	</footer>
+</div>
+
+<!-- ABOUT -->
+<div data-role="page" id="about">
+	<header data-role="header" data-add-back-btn="false" data-id="header">
+		<a href="#home" class="ui-btn ui-icon-home ui-btn-icon-notext ui-corner-all"></a>
+		<h1>Final Project</h1>
+		<a href="#about" class="ui-btn ui-icon-info ui-btn-icon-notext ui-corner-all"></a>
+	</header>
+	<div role="main" class="ui-content">
+		<div class="ui-corner-all custom-corners">
+			<div class="ui-bar ui-bar-a"><span>Developed By</span></div>
+			<div id="dev" class="ui-body ui-body-a"></div>
+		</div>
+		<div class="ui-corner-all custom-corners">
+			<div class="ui-bar ui-bar-a"><span>Course</span></div>
+			<div class="ui-body ui-body-a">
+				<p>Computer Programmer<br>
+					SYST24444 - Mobile Web Development<br>
+				</p>
+			</div>
+		</div>
+	</div>
+	<footer data-role="footer" data-position="fixed" data-id="footer">
+	<span class="footerCreds style="z-index = 1">Final Project<br>
+			SYST24444 - Mobile Web Development<br>
+			Computer Programmer<br>
+	</span>
+	</footer>
+</div>
+</body>
+</html>

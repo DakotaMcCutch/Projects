@@ -1,0 +1,1371 @@
+_____________________________________________________________________
++ Program class: com/Free/Final/MyActivity
+  Superclass:    android/app/Activity
+  Major version: 0x33
+  Minor version: 0x0
+  Access flags:  0x21
+    = public class com.Free.Final.MyActivity extends android.app.Activity
+
+Interfaces (count = 0):
+
+Constant Pool (count = 187):
+  + Integer [2130903040]
+  + Integer [2130903041]
+  + Integer [2130968576]
+  + Integer [2130968577]
+  + Integer [2131099648]
+  + Integer [2131099651]
+  + String []
+  + String [\|]
+  + Class [android/app/Activity]
+  + Class [android/content/Context]
+  + Class [android/content/res/Configuration]
+  + Class [android/content/res/Resources]
+  + Class [android/widget/ImageView]
+  + Class [android/widget/TextView]
+  + Class [com/Free/Final/MyActivity]
+  + Class [com/Free/Final/a]
+  + Class [java/io/BufferedReader]
+  + Class [java/io/IOException]
+  + Class [java/io/InputStreamReader]
+  + Class [java/lang/NullPointerException]
+  + Class [java/lang/String]
+  + Class [java/util/ArrayList]
+  + Fieldref [android/content/res/Configuration.screenLayout I]
+  + Fieldref [com/Free/Final/MyActivity.a Landroid/view/View$OnTouchListener;]
+  + Fieldref [com/Free/Final/MyActivity.b [Ljava/lang/String;]
+  + Fieldref [com/Free/Final/MyActivity.c Ljava/util/ArrayList;]
+  + Fieldref [com/Free/Final/MyActivity.d Ljava/util/ArrayList;]
+  + Fieldref [com/Free/Final/MyActivity.e Ljava/util/ArrayList;]
+  + Fieldref [com/Free/Final/MyActivity.f Ljava/util/ArrayList;]
+  + Fieldref [com/Free/Final/MyActivity.g Ljava/util/ArrayList;]
+  + Fieldref [com/Free/Final/MyActivity.h Ljava/util/ArrayList;]
+  + Fieldref [com/Free/Final/MyActivity.i Ljava/util/ArrayList;]
+  + Fieldref [com/Free/Final/MyActivity.j Ljava/util/ArrayList;]
+  + Fieldref [com/Free/Final/MyActivity.k Ljava/util/ArrayList;]
+  + Fieldref [com/Free/Final/MyActivity.l Ljava/util/ArrayList;]
+  + Fieldref [com/Free/Final/MyActivity.m Landroid/widget/TextView;]
+  + Fieldref [com/Free/Final/MyActivity.n Landroid/widget/RadioButton;]
+  + Fieldref [com/Free/Final/MyActivity.o Landroid/content/Context;]
+  + Fieldref [com/Free/Final/MyActivity.p Ljava/io/BufferedReader;]
+  + Fieldref [com/Free/Final/MyActivity.q Ljava/lang/String;]
+  + Fieldref [com/Free/Final/MyActivity.r Ljava/io/InputStream;]
+  + Methodref [android/app/Activity.<init> ()V]
+  + Methodref [android/app/Activity.onCreate (Landroid/os/Bundle;)V]
+  + Methodref [android/content/Context.getResources ()Landroid/content/res/Resources;]
+  + Methodref [android/content/res/Resources.getConfiguration ()Landroid/content/res/Configuration;]
+  + Methodref [android/content/res/Resources.openRawResource (I)Ljava/io/InputStream;]
+  + Methodref [android/widget/ImageView.setOnTouchListener (Landroid/view/View$OnTouchListener;)V]
+  + Methodref [android/widget/TextView.setText (Ljava/lang/CharSequence;)V]
+  + Methodref [com/Free/Final/MyActivity.a ()V]
+  + Methodref [com/Free/Final/MyActivity.b ()V]
+  + Methodref [com/Free/Final/MyActivity.findViewById (I)Landroid/view/View;]
+  + Methodref [com/Free/Final/MyActivity.getApplicationContext ()Landroid/content/Context;]
+  + Methodref [com/Free/Final/MyActivity.getResources ()Landroid/content/res/Resources;]
+  + Methodref [com/Free/Final/MyActivity.setContentView (I)V]
+  + Methodref [com/Free/Final/a.<init> (Lcom/Free/Final/MyActivity;)V]
+  + Methodref [java/io/BufferedReader.<init> (Ljava/io/Reader;)V]
+  + Methodref [java/io/BufferedReader.close ()V]
+  + Methodref [java/io/BufferedReader.readLine ()Ljava/lang/String;]
+  + Methodref [java/io/IOException.getMessage ()Ljava/lang/String;]
+  + Methodref [java/io/InputStreamReader.<init> (Ljava/io/InputStream;)V]
+  + Methodref [java/lang/NullPointerException.getMessage ()Ljava/lang/String;]
+  + Methodref [java/lang/String.split (Ljava/lang/String;)[Ljava/lang/String;]
+  + Methodref [java/util/ArrayList.<init> ()V]
+  + Methodref [java/util/ArrayList.add (Ljava/lang/Object;)Z]
+  + NameAndType [<init> ()V]
+  + NameAndType [<init> (Lcom/Free/Final/MyActivity;)V]
+  + NameAndType [<init> (Ljava/io/InputStream;)V]
+  + NameAndType [<init> (Ljava/io/Reader;)V]
+  + NameAndType [a ()V]
+  + NameAndType [a Landroid/view/View$OnTouchListener;]
+  + NameAndType [add (Ljava/lang/Object;)Z]
+  + NameAndType [b ()V]
+  + NameAndType [b [Ljava/lang/String;]
+  + NameAndType [c Ljava/util/ArrayList;]
+  + NameAndType [close ()V]
+  + NameAndType [d Ljava/util/ArrayList;]
+  + NameAndType [e Ljava/util/ArrayList;]
+  + NameAndType [f Ljava/util/ArrayList;]
+  + NameAndType [findViewById (I)Landroid/view/View;]
+  + NameAndType [g Ljava/util/ArrayList;]
+  + NameAndType [getApplicationContext ()Landroid/content/Context;]
+  + NameAndType [getConfiguration ()Landroid/content/res/Configuration;]
+  + NameAndType [getMessage ()Ljava/lang/String;]
+  + NameAndType [getResources ()Landroid/content/res/Resources;]
+  + NameAndType [h Ljava/util/ArrayList;]
+  + NameAndType [i Ljava/util/ArrayList;]
+  + NameAndType [j Ljava/util/ArrayList;]
+  + NameAndType [k Ljava/util/ArrayList;]
+  + NameAndType [l Ljava/util/ArrayList;]
+  + NameAndType [m Landroid/widget/TextView;]
+  + NameAndType [n Landroid/widget/RadioButton;]
+  + NameAndType [o Landroid/content/Context;]
+  + NameAndType [onCreate (Landroid/os/Bundle;)V]
+  + NameAndType [openRawResource (I)Ljava/io/InputStream;]
+  + NameAndType [p Ljava/io/BufferedReader;]
+  + NameAndType [q Ljava/lang/String;]
+  + NameAndType [r Ljava/io/InputStream;]
+  + NameAndType [readLine ()Ljava/lang/String;]
+  + NameAndType [screenLayout I]
+  + NameAndType [setContentView (I)V]
+  + NameAndType [setOnTouchListener (Landroid/view/View$OnTouchListener;)V]
+  + NameAndType [setText (Ljava/lang/CharSequence;)V]
+  + NameAndType [split (Ljava/lang/String;)[Ljava/lang/String;]
+  + Utf8 []
+  + Utf8 [()Landroid/content/Context;]
+  + Utf8 [()Landroid/content/res/Configuration;]
+  + Utf8 [()Landroid/content/res/Resources;]
+  + Utf8 [()Ljava/lang/String;]
+  + Utf8 [()V]
+  + Utf8 [(I)Landroid/view/View;]
+  + Utf8 [(I)Ljava/io/InputStream;]
+  + Utf8 [(I)V]
+  + Utf8 [(Landroid/os/Bundle;)V]
+  + Utf8 [(Landroid/view/View$OnTouchListener;)V]
+  + Utf8 [(Lcom/Free/Final/MyActivity;)Landroid/widget/RadioButton;]
+  + Utf8 [(Lcom/Free/Final/MyActivity;)Landroid/widget/TextView;]
+  + Utf8 [(Lcom/Free/Final/MyActivity;)Ljava/util/ArrayList;]
+  + Utf8 [(Lcom/Free/Final/MyActivity;)V]
+  + Utf8 [(Lcom/Free/Final/MyActivity;Landroid/widget/RadioButton;)Landroid/widget/RadioButton;]
+  + Utf8 [(Lcom/Free/Final/MyActivity;Landroid/widget/TextView;)Landroid/widget/TextView;]
+  + Utf8 [(Ljava/io/InputStream;)V]
+  + Utf8 [(Ljava/io/Reader;)V]
+  + Utf8 [(Ljava/lang/CharSequence;)V]
+  + Utf8 [(Ljava/lang/Object;)Z]
+  + Utf8 [(Ljava/lang/String;)[Ljava/lang/String;]
+  + Utf8 [<init>]
+  + Utf8 [Code]
+  + Utf8 [I]
+  + Utf8 [Landroid/content/Context;]
+  + Utf8 [Landroid/view/View$OnTouchListener;]
+  + Utf8 [Landroid/widget/RadioButton;]
+  + Utf8 [Landroid/widget/TextView;]
+  + Utf8 [Ljava/io/BufferedReader;]
+  + Utf8 [Ljava/io/InputStream;]
+  + Utf8 [Ljava/lang/String;]
+  + Utf8 [Ljava/util/ArrayList;]
+  + Utf8 [StackMapTable]
+  + Utf8 [[Ljava/lang/String;]
+  + Utf8 [\|]
+  + Utf8 [a]
+  + Utf8 [add]
+  + Utf8 [android/app/Activity]
+  + Utf8 [android/content/Context]
+  + Utf8 [android/content/res/Configuration]
+  + Utf8 [android/content/res/Resources]
+  + Utf8 [android/widget/ImageView]
+  + Utf8 [android/widget/TextView]
+  + Utf8 [b]
+  + Utf8 [c]
+  + Utf8 [close]
+  + Utf8 [com/Free/Final/MyActivity]
+  + Utf8 [com/Free/Final/a]
+  + Utf8 [d]
+  + Utf8 [e]
+  + Utf8 [f]
+  + Utf8 [findViewById]
+  + Utf8 [g]
+  + Utf8 [getApplicationContext]
+  + Utf8 [getConfiguration]
+  + Utf8 [getMessage]
+  + Utf8 [getResources]
+  + Utf8 [h]
+  + Utf8 [i]
+  + Utf8 [j]
+  + Utf8 [java/io/BufferedReader]
+  + Utf8 [java/io/IOException]
+  + Utf8 [java/io/InputStreamReader]
+  + Utf8 [java/lang/NullPointerException]
+  + Utf8 [java/lang/String]
+  + Utf8 [java/util/ArrayList]
+  + Utf8 [k]
+  + Utf8 [l]
+  + Utf8 [m]
+  + Utf8 [n]
+  + Utf8 [o]
+  + Utf8 [onCreate]
+  + Utf8 [openRawResource]
+  + Utf8 [p]
+  + Utf8 [q]
+  + Utf8 [r]
+  + Utf8 [readLine]
+  + Utf8 [screenLayout]
+  + Utf8 [setContentView]
+  + Utf8 [setOnTouchListener]
+  + Utf8 [setText]
+  + Utf8 [split]
+
+Fields (count = 18):
+  + Field:        b [Ljava/lang/String;
+    Access flags: 0x2
+      = private java.lang.String[] b
+  + Field:        c Ljava/util/ArrayList;
+    Access flags: 0x2
+      = private java.util.ArrayList c
+  + Field:        d Ljava/util/ArrayList;
+    Access flags: 0x2
+      = private java.util.ArrayList d
+  + Field:        e Ljava/util/ArrayList;
+    Access flags: 0x2
+      = private java.util.ArrayList e
+  + Field:        f Ljava/util/ArrayList;
+    Access flags: 0x2
+      = private java.util.ArrayList f
+  + Field:        g Ljava/util/ArrayList;
+    Access flags: 0x2
+      = private java.util.ArrayList g
+  + Field:        h Ljava/util/ArrayList;
+    Access flags: 0x2
+      = private java.util.ArrayList h
+  + Field:        i Ljava/util/ArrayList;
+    Access flags: 0x2
+      = private java.util.ArrayList i
+  + Field:        j Ljava/util/ArrayList;
+    Access flags: 0x2
+      = private java.util.ArrayList j
+  + Field:        k Ljava/util/ArrayList;
+    Access flags: 0x2
+      = private java.util.ArrayList k
+  + Field:        l Ljava/util/ArrayList;
+    Access flags: 0x2
+      = private java.util.ArrayList l
+  + Field:        m Landroid/widget/TextView;
+    Access flags: 0x2
+      = private android.widget.TextView m
+  + Field:        n Landroid/widget/RadioButton;
+    Access flags: 0x2
+      = private android.widget.RadioButton n
+  + Field:        o Landroid/content/Context;
+    Access flags: 0x2
+      = private android.content.Context o
+  + Field:        p Ljava/io/BufferedReader;
+    Access flags: 0x2
+      = private java.io.BufferedReader p
+  + Field:        q Ljava/lang/String;
+    Access flags: 0x2
+      = private java.lang.String q
+  + Field:        r Ljava/io/InputStream;
+    Access flags: 0x2
+      = private java.io.InputStream r
+  + Field:        a Landroid/view/View$OnTouchListener;
+    Access flags: 0x0
+      = android.view.View$OnTouchListener a
+
+Methods (count = 18):
+  - Method:       <init>()V
+    Access flags: 0x1
+      = public MyActivity()
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 133, locals = 1, stack = 4):
+      [0] aload_0 v0
+      [1] invokespecial #42
+        + Methodref [android/app/Activity.<init> ()V]
+      [4] aload_0 v0
+      [5] new #22
+        + Class [java/util/ArrayList]
+      [8] dup
+      [9] invokespecial #63
+        + Methodref [java/util/ArrayList.<init> ()V]
+      [12] putfield #26
+        + Fieldref [com/Free/Final/MyActivity.c Ljava/util/ArrayList;]
+      [15] aload_0 v0
+      [16] new #22
+        + Class [java/util/ArrayList]
+      [19] dup
+      [20] invokespecial #63
+        + Methodref [java/util/ArrayList.<init> ()V]
+      [23] putfield #27
+        + Fieldref [com/Free/Final/MyActivity.d Ljava/util/ArrayList;]
+      [26] aload_0 v0
+      [27] new #22
+        + Class [java/util/ArrayList]
+      [30] dup
+      [31] invokespecial #63
+        + Methodref [java/util/ArrayList.<init> ()V]
+      [34] putfield #28
+        + Fieldref [com/Free/Final/MyActivity.e Ljava/util/ArrayList;]
+      [37] aload_0 v0
+      [38] new #22
+        + Class [java/util/ArrayList]
+      [41] dup
+      [42] invokespecial #63
+        + Methodref [java/util/ArrayList.<init> ()V]
+      [45] putfield #29
+        + Fieldref [com/Free/Final/MyActivity.f Ljava/util/ArrayList;]
+      [48] aload_0 v0
+      [49] new #22
+        + Class [java/util/ArrayList]
+      [52] dup
+      [53] invokespecial #63
+        + Methodref [java/util/ArrayList.<init> ()V]
+      [56] putfield #30
+        + Fieldref [com/Free/Final/MyActivity.g Ljava/util/ArrayList;]
+      [59] aload_0 v0
+      [60] new #22
+        + Class [java/util/ArrayList]
+      [63] dup
+      [64] invokespecial #63
+        + Methodref [java/util/ArrayList.<init> ()V]
+      [67] putfield #31
+        + Fieldref [com/Free/Final/MyActivity.h Ljava/util/ArrayList;]
+      [70] aload_0 v0
+      [71] new #22
+        + Class [java/util/ArrayList]
+      [74] dup
+      [75] invokespecial #63
+        + Methodref [java/util/ArrayList.<init> ()V]
+      [78] putfield #32
+        + Fieldref [com/Free/Final/MyActivity.i Ljava/util/ArrayList;]
+      [81] aload_0 v0
+      [82] new #22
+        + Class [java/util/ArrayList]
+      [85] dup
+      [86] invokespecial #63
+        + Methodref [java/util/ArrayList.<init> ()V]
+      [89] putfield #33
+        + Fieldref [com/Free/Final/MyActivity.j Ljava/util/ArrayList;]
+      [92] aload_0 v0
+      [93] new #22
+        + Class [java/util/ArrayList]
+      [96] dup
+      [97] invokespecial #63
+        + Methodref [java/util/ArrayList.<init> ()V]
+      [100] putfield #34
+        + Fieldref [com/Free/Final/MyActivity.k Ljava/util/ArrayList;]
+      [103] aload_0 v0
+      [104] new #22
+        + Class [java/util/ArrayList]
+      [107] dup
+      [108] invokespecial #63
+        + Methodref [java/util/ArrayList.<init> ()V]
+      [111] putfield #35
+        + Fieldref [com/Free/Final/MyActivity.l Ljava/util/ArrayList;]
+      [114] aload_0 v0
+      [115] ldc #7
+        + String []
+      [117] putfield #40
+        + Fieldref [com/Free/Final/MyActivity.q Ljava/lang/String;]
+      [120] aload_0 v0
+      [121] new #16
+        + Class [com/Free/Final/a]
+      [124] dup
+      [125] aload_0 v0
+      [126] invokespecial #55
+        + Methodref [com/Free/Final/a.<init> (Lcom/Free/Final/MyActivity;)V]
+      [129] putfield #24
+        + Fieldref [com/Free/Final/MyActivity.a Landroid/view/View$OnTouchListener;]
+      [132] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       a()V
+    Access flags: 0x1
+      = public void a()
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 244, locals = 3, stack = 6):
+      [0] aload_0 v0
+      [1] new #17
+        + Class [java/io/BufferedReader]
+      [4] dup
+      [5] new #19
+        + Class [java/io/InputStreamReader]
+      [8] dup
+      [9] aload_0 v0
+      [10] getfield #41
+        + Fieldref [com/Free/Final/MyActivity.r Ljava/io/InputStream;]
+      [13] invokespecial #60
+        + Methodref [java/io/InputStreamReader.<init> (Ljava/io/InputStream;)V]
+      [16] invokespecial #56
+        + Methodref [java/io/BufferedReader.<init> (Ljava/io/Reader;)V]
+      [19] putfield #39
+        + Fieldref [com/Free/Final/MyActivity.p Ljava/io/BufferedReader;]
+      [22] iconst_1
+      [23] istore_1 v1
+      [24] iload_1 v1
+      [25] ifeq +181 (target=206)
+      [28] aload_0 v0
+      [29] getfield #39
+        + Fieldref [com/Free/Final/MyActivity.p Ljava/io/BufferedReader;]
+      [32] invokevirtual #58
+        + Methodref [java/io/BufferedReader.readLine ()Ljava/lang/String;]
+      [35] astore_2 v2
+      [36] aload_2 v2
+      [37] ifnonnull +8 (target=45)
+      [40] iconst_0
+      [41] istore_1 v1
+      [42] goto +13 (target=55)
+      [45] aload_0 v0
+      [46] aload_2 v2
+      [47] ldc #8
+        + String [\|]
+      [49] invokevirtual #62
+        + Methodref [java/lang/String.split (Ljava/lang/String;)[Ljava/lang/String;]
+      [52] putfield #25
+        + Fieldref [com/Free/Final/MyActivity.b [Ljava/lang/String;]
+      [55] iload_1 v1
+      [56] ifeq +147 (target=203)
+      [59] aload_0 v0
+      [60] getfield #26
+        + Fieldref [com/Free/Final/MyActivity.c Ljava/util/ArrayList;]
+      [63] aload_0 v0
+      [64] getfield #25
+        + Fieldref [com/Free/Final/MyActivity.b [Ljava/lang/String;]
+      [67] iconst_0
+      [68] aaload
+      [69] invokevirtual #64
+        + Methodref [java/util/ArrayList.add (Ljava/lang/Object;)Z]
+      [72] pop
+      [73] aload_0 v0
+      [74] getfield #27
+        + Fieldref [com/Free/Final/MyActivity.d Ljava/util/ArrayList;]
+      [77] aload_0 v0
+      [78] getfield #25
+        + Fieldref [com/Free/Final/MyActivity.b [Ljava/lang/String;]
+      [81] iconst_1
+      [82] aaload
+      [83] invokevirtual #64
+        + Methodref [java/util/ArrayList.add (Ljava/lang/Object;)Z]
+      [86] pop
+      [87] aload_0 v0
+      [88] getfield #28
+        + Fieldref [com/Free/Final/MyActivity.e Ljava/util/ArrayList;]
+      [91] aload_0 v0
+      [92] getfield #25
+        + Fieldref [com/Free/Final/MyActivity.b [Ljava/lang/String;]
+      [95] iconst_2
+      [96] aaload
+      [97] invokevirtual #64
+        + Methodref [java/util/ArrayList.add (Ljava/lang/Object;)Z]
+      [100] pop
+      [101] aload_0 v0
+      [102] getfield #29
+        + Fieldref [com/Free/Final/MyActivity.f Ljava/util/ArrayList;]
+      [105] aload_0 v0
+      [106] getfield #25
+        + Fieldref [com/Free/Final/MyActivity.b [Ljava/lang/String;]
+      [109] iconst_3
+      [110] aaload
+      [111] invokevirtual #64
+        + Methodref [java/util/ArrayList.add (Ljava/lang/Object;)Z]
+      [114] pop
+      [115] aload_0 v0
+      [116] getfield #30
+        + Fieldref [com/Free/Final/MyActivity.g Ljava/util/ArrayList;]
+      [119] aload_0 v0
+      [120] getfield #25
+        + Fieldref [com/Free/Final/MyActivity.b [Ljava/lang/String;]
+      [123] iconst_4
+      [124] aaload
+      [125] invokevirtual #64
+        + Methodref [java/util/ArrayList.add (Ljava/lang/Object;)Z]
+      [128] pop
+      [129] aload_0 v0
+      [130] getfield #31
+        + Fieldref [com/Free/Final/MyActivity.h Ljava/util/ArrayList;]
+      [133] aload_0 v0
+      [134] getfield #25
+        + Fieldref [com/Free/Final/MyActivity.b [Ljava/lang/String;]
+      [137] iconst_5
+      [138] aaload
+      [139] invokevirtual #64
+        + Methodref [java/util/ArrayList.add (Ljava/lang/Object;)Z]
+      [142] pop
+      [143] aload_0 v0
+      [144] getfield #32
+        + Fieldref [com/Free/Final/MyActivity.i Ljava/util/ArrayList;]
+      [147] aload_0 v0
+      [148] getfield #25
+        + Fieldref [com/Free/Final/MyActivity.b [Ljava/lang/String;]
+      [151] bipush 6
+      [153] aaload
+      [154] invokevirtual #64
+        + Methodref [java/util/ArrayList.add (Ljava/lang/Object;)Z]
+      [157] pop
+      [158] aload_0 v0
+      [159] getfield #33
+        + Fieldref [com/Free/Final/MyActivity.j Ljava/util/ArrayList;]
+      [162] aload_0 v0
+      [163] getfield #25
+        + Fieldref [com/Free/Final/MyActivity.b [Ljava/lang/String;]
+      [166] bipush 7
+      [168] aaload
+      [169] invokevirtual #64
+        + Methodref [java/util/ArrayList.add (Ljava/lang/Object;)Z]
+      [172] pop
+      [173] aload_0 v0
+      [174] getfield #34
+        + Fieldref [com/Free/Final/MyActivity.k Ljava/util/ArrayList;]
+      [177] aload_0 v0
+      [178] getfield #25
+        + Fieldref [com/Free/Final/MyActivity.b [Ljava/lang/String;]
+      [181] bipush 8
+      [183] aaload
+      [184] invokevirtual #64
+        + Methodref [java/util/ArrayList.add (Ljava/lang/Object;)Z]
+      [187] pop
+      [188] aload_0 v0
+      [189] getfield #35
+        + Fieldref [com/Free/Final/MyActivity.l Ljava/util/ArrayList;]
+      [192] aload_0 v0
+      [193] getfield #25
+        + Fieldref [com/Free/Final/MyActivity.b [Ljava/lang/String;]
+      [196] bipush 9
+      [198] aaload
+      [199] invokevirtual #64
+        + Methodref [java/util/ArrayList.add (Ljava/lang/Object;)Z]
+      [202] pop
+      [203] goto -179 (target=24)
+      [206] aload_0 v0
+      [207] getfield #39
+        + Fieldref [com/Free/Final/MyActivity.p Ljava/io/BufferedReader;]
+      [210] invokevirtual #57
+        + Methodref [java/io/BufferedReader.close ()V]
+      [213] goto +30 (target=243)
+      [216] astore_1 v1
+      [217] aload_0 v0
+      [218] getfield #36
+        + Fieldref [com/Free/Final/MyActivity.m Landroid/widget/TextView;]
+      [221] aload_1 v1
+      [222] invokevirtual #61
+        + Methodref [java/lang/NullPointerException.getMessage ()Ljava/lang/String;]
+      [225] invokevirtual #48
+        + Methodref [android/widget/TextView.setText (Ljava/lang/CharSequence;)V]
+      [228] goto +15 (target=243)
+      [231] astore_1 v1
+      [232] aload_0 v0
+      [233] getfield #36
+        + Fieldref [com/Free/Final/MyActivity.m Landroid/widget/TextView;]
+      [236] aload_1 v1
+      [237] invokevirtual #59
+        + Methodref [java/io/IOException.getMessage ()Ljava/lang/String;]
+      [240] invokevirtual #48
+        + Methodref [android/widget/TextView.setText (Ljava/lang/CharSequence;)V]
+      [243] return
+      Code attribute exceptions (count = 2):
+      - ExceptionInfo (0 -> 213: 216):
+      + Class [java/lang/NullPointerException]
+      - ExceptionInfo (0 -> 213: 231):
+      + Class [java/io/IOException]
+      Code attribute attributes (attribute count = 1):
+      + Stack map table attribute (count = 8):
+        - [24] Var: ...[i], Stack: (empty)
+        - [45] Var: ...[a:java/lang/String], Stack: (empty)
+        - [55] Var: ..., Stack: (empty)
+        - [203] Var: -1, Stack: (empty)
+        - [206] Var: ..., Stack: (empty)
+        - [216] Var: [a:com/Free/Final/MyActivity], Stack: [a:java/lang/NullPointerException]
+        - [231] Var: ..., Stack: [a:java/io/IOException]
+        - [243] Var: ..., Stack: (empty)
+  + Method:       b()V
+    Access flags: 0x1
+      = public void b()
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 80, locals = 1, stack = 3):
+      [0] aload_0 v0
+      [1] invokevirtual #53
+        + Methodref [com/Free/Final/MyActivity.getResources ()Landroid/content/res/Resources;]
+      [4] invokevirtual #45
+        + Methodref [android/content/res/Resources.getConfiguration ()Landroid/content/res/Configuration;]
+      [7] getfield #23
+        + Fieldref [android/content/res/Configuration.screenLayout I]
+      [10] iconst_3
+      [11] iand
+      [12] iconst_3
+      [13] ificmpeq +19 (target=32)
+      [16] aload_0 v0
+      [17] invokevirtual #53
+        + Methodref [com/Free/Final/MyActivity.getResources ()Landroid/content/res/Resources;]
+      [20] invokevirtual #45
+        + Methodref [android/content/res/Resources.getConfiguration ()Landroid/content/res/Configuration;]
+      [23] getfield #23
+        + Fieldref [android/content/res/Configuration.screenLayout I]
+      [26] iconst_4
+      [27] iand
+      [28] iconst_4
+      [29] ificmpne +28 (target=57)
+      [32] aload_0 v0
+      [33] aload_0 v0
+      [34] getfield #38
+        + Fieldref [com/Free/Final/MyActivity.o Landroid/content/Context;]
+      [37] invokevirtual #44
+        + Methodref [android/content/Context.getResources ()Landroid/content/res/Resources;]
+      [40] ldc #4
+        + Integer [2130968577]
+      [42] invokevirtual #46
+        + Methodref [android/content/res/Resources.openRawResource (I)Ljava/io/InputStream;]
+      [45] putfield #41
+        + Fieldref [com/Free/Final/MyActivity.r Ljava/io/InputStream;]
+      [48] aload_0 v0
+      [49] ldc #1
+        + Integer [2130903040]
+      [51] invokevirtual #54
+        + Methodref [com/Free/Final/MyActivity.setContentView (I)V]
+      [54] goto +25 (target=79)
+      [57] aload_0 v0
+      [58] aload_0 v0
+      [59] getfield #38
+        + Fieldref [com/Free/Final/MyActivity.o Landroid/content/Context;]
+      [62] invokevirtual #44
+        + Methodref [android/content/Context.getResources ()Landroid/content/res/Resources;]
+      [65] ldc #3
+        + Integer [2130968576]
+      [67] invokevirtual #46
+        + Methodref [android/content/res/Resources.openRawResource (I)Ljava/io/InputStream;]
+      [70] putfield #41
+        + Fieldref [com/Free/Final/MyActivity.r Ljava/io/InputStream;]
+      [73] aload_0 v0
+      [74] ldc #2
+        + Integer [2130903041]
+      [76] invokevirtual #54
+        + Methodref [com/Free/Final/MyActivity.setContentView (I)V]
+      [79] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 1):
+      + Stack map table attribute (count = 3):
+        - [32] Var: ..., Stack: (empty)
+        - [57] Var: ..., Stack: (empty)
+        - [79] Var: ..., Stack: (empty)
+  + Method:       onCreate(Landroid/os/Bundle;)V
+    Access flags: 0x1
+      = public void onCreate(android.os.Bundle)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 53, locals = 3, stack = 3):
+      [0] aload_0 v0
+      [1] aload_1 v1
+      [2] invokespecial #43
+        + Methodref [android/app/Activity.onCreate (Landroid/os/Bundle;)V]
+      [5] aload_0 v0
+      [6] aload_0 v0
+      [7] invokevirtual #52
+        + Methodref [com/Free/Final/MyActivity.getApplicationContext ()Landroid/content/Context;]
+      [10] putfield #38
+        + Fieldref [com/Free/Final/MyActivity.o Landroid/content/Context;]
+      [13] aload_0 v0
+      [14] invokevirtual #50
+        + Methodref [com/Free/Final/MyActivity.b ()V]
+      [17] aload_0 v0
+      [18] aload_0 v0
+      [19] ldc #6
+        + Integer [2131099651]
+      [21] invokevirtual #51
+        + Methodref [com/Free/Final/MyActivity.findViewById (I)Landroid/view/View;]
+      [24] checkcast #14
+        + Class [android/widget/TextView]
+      [27] putfield #36
+        + Fieldref [com/Free/Final/MyActivity.m Landroid/widget/TextView;]
+      [30] aload_0 v0
+      [31] invokevirtual #49
+        + Methodref [com/Free/Final/MyActivity.a ()V]
+      [34] aload_0 v0
+      [35] ldc #5
+        + Integer [2131099648]
+      [37] invokevirtual #51
+        + Methodref [com/Free/Final/MyActivity.findViewById (I)Landroid/view/View;]
+      [40] checkcast #13
+        + Class [android/widget/ImageView]
+      [43] astore_2 v2
+      [44] aload_2 v2
+      [45] aload_0 v0
+      [46] getfield #24
+        + Fieldref [com/Free/Final/MyActivity.a Landroid/view/View$OnTouchListener;]
+      [49] invokevirtual #47
+        + Methodref [android/widget/ImageView.setOnTouchListener (Landroid/view/View$OnTouchListener;)V]
+      [52] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       a(Lcom/Free/Final/MyActivity;Landroid/widget/TextView;)Landroid/widget/TextView;
+    Access flags: 0x1008
+      = static synthetic android.widget.TextView a(com.Free.Final.MyActivity,android.widget.TextView)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 7, locals = 2, stack = 3):
+      [0] aload_0 v0
+      [1] aload_1 v1
+      [2] dup_x1
+      [3] putfield #36
+        + Fieldref [com/Free/Final/MyActivity.m Landroid/widget/TextView;]
+      [6] areturn
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       a(Lcom/Free/Final/MyActivity;Landroid/widget/RadioButton;)Landroid/widget/RadioButton;
+    Access flags: 0x1008
+      = static synthetic android.widget.RadioButton a(com.Free.Final.MyActivity,android.widget.RadioButton)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 7, locals = 2, stack = 3):
+      [0] aload_0 v0
+      [1] aload_1 v1
+      [2] dup_x1
+      [3] putfield #37
+        + Fieldref [com/Free/Final/MyActivity.n Landroid/widget/RadioButton;]
+      [6] areturn
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       a(Lcom/Free/Final/MyActivity;)Ljava/util/ArrayList;
+    Access flags: 0x1008
+      = static synthetic java.util.ArrayList a(com.Free.Final.MyActivity)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 5, locals = 1, stack = 1):
+      [0] aload_0 v0
+      [1] getfield #26
+        + Fieldref [com/Free/Final/MyActivity.c Ljava/util/ArrayList;]
+      [4] areturn
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       b(Lcom/Free/Final/MyActivity;)Ljava/util/ArrayList;
+    Access flags: 0x1008
+      = static synthetic java.util.ArrayList b(com.Free.Final.MyActivity)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 5, locals = 1, stack = 1):
+      [0] aload_0 v0
+      [1] getfield #34
+        + Fieldref [com/Free/Final/MyActivity.k Ljava/util/ArrayList;]
+      [4] areturn
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       c(Lcom/Free/Final/MyActivity;)Ljava/util/ArrayList;
+    Access flags: 0x1008
+      = static synthetic java.util.ArrayList c(com.Free.Final.MyActivity)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 5, locals = 1, stack = 1):
+      [0] aload_0 v0
+      [1] getfield #35
+        + Fieldref [com/Free/Final/MyActivity.l Ljava/util/ArrayList;]
+      [4] areturn
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       d(Lcom/Free/Final/MyActivity;)Landroid/widget/RadioButton;
+    Access flags: 0x1008
+      = static synthetic android.widget.RadioButton d(com.Free.Final.MyActivity)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 5, locals = 1, stack = 1):
+      [0] aload_0 v0
+      [1] getfield #37
+        + Fieldref [com/Free/Final/MyActivity.n Landroid/widget/RadioButton;]
+      [4] areturn
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       e(Lcom/Free/Final/MyActivity;)Ljava/util/ArrayList;
+    Access flags: 0x1008
+      = static synthetic java.util.ArrayList e(com.Free.Final.MyActivity)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 5, locals = 1, stack = 1):
+      [0] aload_0 v0
+      [1] getfield #27
+        + Fieldref [com/Free/Final/MyActivity.d Ljava/util/ArrayList;]
+      [4] areturn
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       f(Lcom/Free/Final/MyActivity;)Ljava/util/ArrayList;
+    Access flags: 0x1008
+      = static synthetic java.util.ArrayList f(com.Free.Final.MyActivity)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 5, locals = 1, stack = 1):
+      [0] aload_0 v0
+      [1] getfield #28
+        + Fieldref [com/Free/Final/MyActivity.e Ljava/util/ArrayList;]
+      [4] areturn
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       g(Lcom/Free/Final/MyActivity;)Ljava/util/ArrayList;
+    Access flags: 0x1008
+      = static synthetic java.util.ArrayList g(com.Free.Final.MyActivity)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 5, locals = 1, stack = 1):
+      [0] aload_0 v0
+      [1] getfield #29
+        + Fieldref [com/Free/Final/MyActivity.f Ljava/util/ArrayList;]
+      [4] areturn
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       h(Lcom/Free/Final/MyActivity;)Ljava/util/ArrayList;
+    Access flags: 0x1008
+      = static synthetic java.util.ArrayList h(com.Free.Final.MyActivity)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 5, locals = 1, stack = 1):
+      [0] aload_0 v0
+      [1] getfield #30
+        + Fieldref [com/Free/Final/MyActivity.g Ljava/util/ArrayList;]
+      [4] areturn
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       i(Lcom/Free/Final/MyActivity;)Ljava/util/ArrayList;
+    Access flags: 0x1008
+      = static synthetic java.util.ArrayList i(com.Free.Final.MyActivity)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 5, locals = 1, stack = 1):
+      [0] aload_0 v0
+      [1] getfield #31
+        + Fieldref [com/Free/Final/MyActivity.h Ljava/util/ArrayList;]
+      [4] areturn
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       j(Lcom/Free/Final/MyActivity;)Landroid/widget/TextView;
+    Access flags: 0x1008
+      = static synthetic android.widget.TextView j(com.Free.Final.MyActivity)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 5, locals = 1, stack = 1):
+      [0] aload_0 v0
+      [1] getfield #36
+        + Fieldref [com/Free/Final/MyActivity.m Landroid/widget/TextView;]
+      [4] areturn
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       k(Lcom/Free/Final/MyActivity;)Ljava/util/ArrayList;
+    Access flags: 0x1008
+      = static synthetic java.util.ArrayList k(com.Free.Final.MyActivity)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 5, locals = 1, stack = 1):
+      [0] aload_0 v0
+      [1] getfield #32
+        + Fieldref [com/Free/Final/MyActivity.i Ljava/util/ArrayList;]
+      [4] areturn
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       l(Lcom/Free/Final/MyActivity;)Ljava/util/ArrayList;
+    Access flags: 0x1008
+      = static synthetic java.util.ArrayList l(com.Free.Final.MyActivity)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 5, locals = 1, stack = 1):
+      [0] aload_0 v0
+      [1] getfield #33
+        + Fieldref [com/Free/Final/MyActivity.j Ljava/util/ArrayList;]
+      [4] areturn
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+
+Class file attributes (count = 0):
+
+_____________________________________________________________________
++ Program class: com/Free/Final/a
+  Superclass:    java/lang/Object
+  Major version: 0x33
+  Minor version: 0x0
+  Access flags:  0x20
+    = class com.Free.Final.a extends java.lang.Object
+
+Interfaces (count = 1):
+  + Class [android/view/View$OnTouchListener]
+
+Constant Pool (count = 143):
+  + Integer [2131099649]
+  + Integer [2131099651]
+  + Float [25.0]
+  + String [ ]
+  + String [Capital: ]
+  + String [Code: ]
+  + String [Exports: ]
+  + String [Imports: ]
+  + String [Joined Canada: ]
+  + String [Largest City: ]
+  + String [Population: ]
+  + String [Province: ]
+  + String [Touch One Of The Red Dots on Each Provinces]
+  + Class [android/view/MotionEvent]
+  + Class [android/view/View$OnTouchListener]
+  + Class [android/widget/RadioButton]
+  + Class [android/widget/TextView]
+  + Class [com/Free/Final/MyActivity]
+  + Class [com/Free/Final/a]
+  + Class [java/lang/Float]
+  + Class [java/lang/Object]
+  + Class [java/lang/String]
+  + Class [java/lang/StringBuilder]
+  + Class [java/util/ArrayList]
+  + Fieldref [com/Free/Final/a.a Lcom/Free/Final/MyActivity;]
+  + Methodref [android/view/MotionEvent.getX ()F]
+  + Methodref [android/view/MotionEvent.getY ()F]
+  + Methodref [android/widget/RadioButton.isChecked ()Z]
+  + Methodref [android/widget/TextView.setText (Ljava/lang/CharSequence;)V]
+  + Methodref [com/Free/Final/MyActivity.a (Lcom/Free/Final/MyActivity;)Ljava/util/ArrayList;]
+  + Methodref [com/Free/Final/MyActivity.a (Lcom/Free/Final/MyActivity;Landroid/widget/RadioButton;)Landroid/widget/RadioButton;]
+  + Methodref [com/Free/Final/MyActivity.a (Lcom/Free/Final/MyActivity;Landroid/widget/TextView;)Landroid/widget/TextView;]
+  + Methodref [com/Free/Final/MyActivity.b (Lcom/Free/Final/MyActivity;)Ljava/util/ArrayList;]
+  + Methodref [com/Free/Final/MyActivity.c (Lcom/Free/Final/MyActivity;)Ljava/util/ArrayList;]
+  + Methodref [com/Free/Final/MyActivity.d (Lcom/Free/Final/MyActivity;)Landroid/widget/RadioButton;]
+  + Methodref [com/Free/Final/MyActivity.e (Lcom/Free/Final/MyActivity;)Ljava/util/ArrayList;]
+  + Methodref [com/Free/Final/MyActivity.f (Lcom/Free/Final/MyActivity;)Ljava/util/ArrayList;]
+  + Methodref [com/Free/Final/MyActivity.findViewById (I)Landroid/view/View;]
+  + Methodref [com/Free/Final/MyActivity.g (Lcom/Free/Final/MyActivity;)Ljava/util/ArrayList;]
+  + Methodref [com/Free/Final/MyActivity.h (Lcom/Free/Final/MyActivity;)Ljava/util/ArrayList;]
+  + Methodref [com/Free/Final/MyActivity.i (Lcom/Free/Final/MyActivity;)Ljava/util/ArrayList;]
+  + Methodref [com/Free/Final/MyActivity.j (Lcom/Free/Final/MyActivity;)Landroid/widget/TextView;]
+  + Methodref [com/Free/Final/MyActivity.k (Lcom/Free/Final/MyActivity;)Ljava/util/ArrayList;]
+  + Methodref [com/Free/Final/MyActivity.l (Lcom/Free/Final/MyActivity;)Ljava/util/ArrayList;]
+  + Methodref [java/lang/Float.parseFloat (Ljava/lang/String;)F]
+  + Methodref [java/lang/Object.<init> ()V]
+  + Methodref [java/lang/StringBuilder.<init> ()V]
+  + Methodref [java/lang/StringBuilder.append (Ljava/lang/String;)Ljava/lang/StringBuilder;]
+  + Methodref [java/lang/StringBuilder.toString ()Ljava/lang/String;]
+  + Methodref [java/util/ArrayList.get (I)Ljava/lang/Object;]
+  + Methodref [java/util/ArrayList.size ()I]
+  + NameAndType [<init> ()V]
+  + NameAndType [a (Lcom/Free/Final/MyActivity;)Ljava/util/ArrayList;]
+  + NameAndType [a (Lcom/Free/Final/MyActivity;Landroid/widget/RadioButton;)Landroid/widget/RadioButton;]
+  + NameAndType [a (Lcom/Free/Final/MyActivity;Landroid/widget/TextView;)Landroid/widget/TextView;]
+  + NameAndType [a Lcom/Free/Final/MyActivity;]
+  + NameAndType [append (Ljava/lang/String;)Ljava/lang/StringBuilder;]
+  + NameAndType [b (Lcom/Free/Final/MyActivity;)Ljava/util/ArrayList;]
+  + NameAndType [c (Lcom/Free/Final/MyActivity;)Ljava/util/ArrayList;]
+  + NameAndType [d (Lcom/Free/Final/MyActivity;)Landroid/widget/RadioButton;]
+  + NameAndType [e (Lcom/Free/Final/MyActivity;)Ljava/util/ArrayList;]
+  + NameAndType [f (Lcom/Free/Final/MyActivity;)Ljava/util/ArrayList;]
+  + NameAndType [findViewById (I)Landroid/view/View;]
+  + NameAndType [g (Lcom/Free/Final/MyActivity;)Ljava/util/ArrayList;]
+  + NameAndType [get (I)Ljava/lang/Object;]
+  + NameAndType [getX ()F]
+  + NameAndType [getY ()F]
+  + NameAndType [h (Lcom/Free/Final/MyActivity;)Ljava/util/ArrayList;]
+  + NameAndType [i (Lcom/Free/Final/MyActivity;)Ljava/util/ArrayList;]
+  + NameAndType [isChecked ()Z]
+  + NameAndType [j (Lcom/Free/Final/MyActivity;)Landroid/widget/TextView;]
+  + NameAndType [k (Lcom/Free/Final/MyActivity;)Ljava/util/ArrayList;]
+  + NameAndType [l (Lcom/Free/Final/MyActivity;)Ljava/util/ArrayList;]
+  + NameAndType [parseFloat (Ljava/lang/String;)F]
+  + NameAndType [setText (Ljava/lang/CharSequence;)V]
+  + NameAndType [size ()I]
+  + NameAndType [toString ()Ljava/lang/String;]
+  + Utf8 [ ]
+  + Utf8 [()F]
+  + Utf8 [()I]
+  + Utf8 [()Ljava/lang/String;]
+  + Utf8 [()V]
+  + Utf8 [()Z]
+  + Utf8 [(I)Landroid/view/View;]
+  + Utf8 [(I)Ljava/lang/Object;]
+  + Utf8 [(Landroid/view/View;Landroid/view/MotionEvent;)Z]
+  + Utf8 [(Lcom/Free/Final/MyActivity;)Landroid/widget/RadioButton;]
+  + Utf8 [(Lcom/Free/Final/MyActivity;)Landroid/widget/TextView;]
+  + Utf8 [(Lcom/Free/Final/MyActivity;)Ljava/util/ArrayList;]
+  + Utf8 [(Lcom/Free/Final/MyActivity;)V]
+  + Utf8 [(Lcom/Free/Final/MyActivity;Landroid/widget/RadioButton;)Landroid/widget/RadioButton;]
+  + Utf8 [(Lcom/Free/Final/MyActivity;Landroid/widget/TextView;)Landroid/widget/TextView;]
+  + Utf8 [(Ljava/lang/CharSequence;)V]
+  + Utf8 [(Ljava/lang/String;)F]
+  + Utf8 [(Ljava/lang/String;)Ljava/lang/StringBuilder;]
+  + Utf8 [<init>]
+  + Utf8 [Capital: ]
+  + Utf8 [Code]
+  + Utf8 [Code: ]
+  + Utf8 [Exports: ]
+  + Utf8 [Imports: ]
+  + Utf8 [Joined Canada: ]
+  + Utf8 [Largest City: ]
+  + Utf8 [Lcom/Free/Final/MyActivity;]
+  + Utf8 [Population: ]
+  + Utf8 [Province: ]
+  + Utf8 [StackMapTable]
+  + Utf8 [Touch One Of The Red Dots on Each Provinces]
+  + Utf8 [a]
+  + Utf8 [android/view/MotionEvent]
+  + Utf8 [android/view/View$OnTouchListener]
+  + Utf8 [android/widget/RadioButton]
+  + Utf8 [android/widget/TextView]
+  + Utf8 [append]
+  + Utf8 [b]
+  + Utf8 [c]
+  + Utf8 [com/Free/Final/MyActivity]
+  + Utf8 [com/Free/Final/a]
+  + Utf8 [d]
+  + Utf8 [e]
+  + Utf8 [f]
+  + Utf8 [findViewById]
+  + Utf8 [g]
+  + Utf8 [get]
+  + Utf8 [getX]
+  + Utf8 [getY]
+  + Utf8 [h]
+  + Utf8 [i]
+  + Utf8 [isChecked]
+  + Utf8 [j]
+  + Utf8 [java/lang/Float]
+  + Utf8 [java/lang/Object]
+  + Utf8 [java/lang/String]
+  + Utf8 [java/lang/StringBuilder]
+  + Utf8 [java/util/ArrayList]
+  + Utf8 [k]
+  + Utf8 [l]
+  + Utf8 [onTouch]
+  + Utf8 [parseFloat]
+  + Utf8 [setText]
+  + Utf8 [size]
+  + Utf8 [toString]
+
+Fields (count = 1):
+  + Field:        a Lcom/Free/Final/MyActivity;
+    Access flags: 0x1010
+      = final synthetic com.Free.Final.MyActivity a
+
+Methods (count = 2):
+  - Method:       <init>(Lcom/Free/Final/MyActivity;)V
+    Access flags: 0x0
+      = a(com.Free.Final.MyActivity)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 10, locals = 2, stack = 2):
+      [0] aload_0 v0
+      [1] aload_1 v1
+      [2] putfield #25
+        + Fieldref [com/Free/Final/a.a Lcom/Free/Final/MyActivity;]
+      [5] aload_0 v0
+      [6] invokespecial #46
+        + Methodref [java/lang/Object.<init> ()V]
+      [9] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  + Method:       onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z
+    Access flags: 0x1
+      = public boolean onTouch(android.view.View,android.view.MotionEvent)
+    Class member attributes (count = 1):
+    + Code attribute instructions (code length = 496, locals = 6, stack = 4):
+      [0] aload_0 v0
+      [1] getfield #25
+        + Fieldref [com/Free/Final/a.a Lcom/Free/Final/MyActivity;]
+      [4] aload_0 v0
+      [5] getfield #25
+        + Fieldref [com/Free/Final/a.a Lcom/Free/Final/MyActivity;]
+      [8] ldc #2
+        + Integer [2131099651]
+      [10] invokevirtual #38
+        + Methodref [com/Free/Final/MyActivity.findViewById (I)Landroid/view/View;]
+      [13] checkcast #17
+        + Class [android/widget/TextView]
+      [16] invokestatic #32
+        + Methodref [com/Free/Final/MyActivity.a (Lcom/Free/Final/MyActivity;Landroid/widget/TextView;)Landroid/widget/TextView;]
+      [19] pop
+      [20] aload_0 v0
+      [21] getfield #25
+        + Fieldref [com/Free/Final/a.a Lcom/Free/Final/MyActivity;]
+      [24] aload_0 v0
+      [25] getfield #25
+        + Fieldref [com/Free/Final/a.a Lcom/Free/Final/MyActivity;]
+      [28] ldc #1
+        + Integer [2131099649]
+      [30] invokevirtual #38
+        + Methodref [com/Free/Final/MyActivity.findViewById (I)Landroid/view/View;]
+      [33] checkcast #16
+        + Class [android/widget/RadioButton]
+      [36] invokestatic #31
+        + Methodref [com/Free/Final/MyActivity.a (Lcom/Free/Final/MyActivity;Landroid/widget/RadioButton;)Landroid/widget/RadioButton;]
+      [39] pop
+      [40] aload_2 v2
+      [41] invokevirtual #26
+        + Methodref [android/view/MotionEvent.getX ()F]
+      [44] fstore_3 v3
+      [45] aload_2 v2
+      [46] invokevirtual #27
+        + Methodref [android/view/MotionEvent.getY ()F]
+      [49] fstore v4
+      [51] iconst_0
+      [52] istore v5
+      [54] iload v5
+      [56] aload_0 v0
+      [57] getfield #25
+        + Fieldref [com/Free/Final/a.a Lcom/Free/Final/MyActivity;]
+      [60] invokestatic #30
+        + Methodref [com/Free/Final/MyActivity.a (Lcom/Free/Final/MyActivity;)Ljava/util/ArrayList;]
+      [63] invokevirtual #51
+        + Methodref [java/util/ArrayList.size ()I]
+      [66] ificmpge +428 (target=494)
+      [69] fload_3 v3
+      [70] aload_0 v0
+      [71] getfield #25
+        + Fieldref [com/Free/Final/a.a Lcom/Free/Final/MyActivity;]
+      [74] invokestatic #33
+        + Methodref [com/Free/Final/MyActivity.b (Lcom/Free/Final/MyActivity;)Ljava/util/ArrayList;]
+      [77] iload v5
+      [79] invokevirtual #50
+        + Methodref [java/util/ArrayList.get (I)Ljava/lang/Object;]
+      [82] checkcast #22
+        + Class [java/lang/String]
+      [85] invokestatic #45
+        + Methodref [java/lang/Float.parseFloat (Ljava/lang/String;)F]
+      [88] ldc #3
+        + Float [25.0]
+      [90] fsub
+      [91] fcmpl
+      [92] ifle +384 (target=476)
+      [95] fload_3 v3
+      [96] aload_0 v0
+      [97] getfield #25
+        + Fieldref [com/Free/Final/a.a Lcom/Free/Final/MyActivity;]
+      [100] invokestatic #33
+        + Methodref [com/Free/Final/MyActivity.b (Lcom/Free/Final/MyActivity;)Ljava/util/ArrayList;]
+      [103] iload v5
+      [105] invokevirtual #50
+        + Methodref [java/util/ArrayList.get (I)Ljava/lang/Object;]
+      [108] checkcast #22
+        + Class [java/lang/String]
+      [111] invokestatic #45
+        + Methodref [java/lang/Float.parseFloat (Ljava/lang/String;)F]
+      [114] ldc #3
+        + Float [25.0]
+      [116] fadd
+      [117] fcmpg
+      [118] ifge +358 (target=476)
+      [121] fload v4
+      [123] aload_0 v0
+      [124] getfield #25
+        + Fieldref [com/Free/Final/a.a Lcom/Free/Final/MyActivity;]
+      [127] invokestatic #34
+        + Methodref [com/Free/Final/MyActivity.c (Lcom/Free/Final/MyActivity;)Ljava/util/ArrayList;]
+      [130] iload v5
+      [132] invokevirtual #50
+        + Methodref [java/util/ArrayList.get (I)Ljava/lang/Object;]
+      [135] checkcast #22
+        + Class [java/lang/String]
+      [138] invokestatic #45
+        + Methodref [java/lang/Float.parseFloat (Ljava/lang/String;)F]
+      [141] ldc #3
+        + Float [25.0]
+      [143] fsub
+      [144] fcmpl
+      [145] ifle +331 (target=476)
+      [148] fload v4
+      [150] aload_0 v0
+      [151] getfield #25
+        + Fieldref [com/Free/Final/a.a Lcom/Free/Final/MyActivity;]
+      [154] invokestatic #34
+        + Methodref [com/Free/Final/MyActivity.c (Lcom/Free/Final/MyActivity;)Ljava/util/ArrayList;]
+      [157] iload v5
+      [159] invokevirtual #50
+        + Methodref [java/util/ArrayList.get (I)Ljava/lang/Object;]
+      [162] checkcast #22
+        + Class [java/lang/String]
+      [165] invokestatic #45
+        + Methodref [java/lang/Float.parseFloat (Ljava/lang/String;)F]
+      [168] ldc #3
+        + Float [25.0]
+      [170] fadd
+      [171] fcmpg
+      [172] ifge +304 (target=476)
+      [175] aload_0 v0
+      [176] getfield #25
+        + Fieldref [com/Free/Final/a.a Lcom/Free/Final/MyActivity;]
+      [179] invokestatic #35
+        + Methodref [com/Free/Final/MyActivity.d (Lcom/Free/Final/MyActivity;)Landroid/widget/RadioButton;]
+      [182] invokevirtual #28
+        + Methodref [android/widget/RadioButton.isChecked ()Z]
+      [185] ifeq +189 (target=374)
+      [188] aload_0 v0
+      [189] getfield #25
+        + Fieldref [com/Free/Final/a.a Lcom/Free/Final/MyActivity;]
+      [192] invokestatic #42
+        + Methodref [com/Free/Final/MyActivity.j (Lcom/Free/Final/MyActivity;)Landroid/widget/TextView;]
+      [195] new #23
+        + Class [java/lang/StringBuilder]
+      [198] dup
+      [199] invokespecial #47
+        + Methodref [java/lang/StringBuilder.<init> ()V]
+      [202] ldc #12
+        + String [Province: ]
+      [204] invokevirtual #48
+        + Methodref [java/lang/StringBuilder.append (Ljava/lang/String;)Ljava/lang/StringBuilder;]
+      [207] aload_0 v0
+      [208] getfield #25
+        + Fieldref [com/Free/Final/a.a Lcom/Free/Final/MyActivity;]
+      [211] invokestatic #30
+        + Methodref [com/Free/Final/MyActivity.a (Lcom/Free/Final/MyActivity;)Ljava/util/ArrayList;]
+      [214] iload v5
+      [216] invokevirtual #50
+        + Methodref [java/util/ArrayList.get (I)Ljava/lang/Object;]
+      [219] checkcast #22
+        + Class [java/lang/String]
+      [222] invokevirtual #48
+        + Methodref [java/lang/StringBuilder.append (Ljava/lang/String;)Ljava/lang/StringBuilder;]
+      [225] ldc #4
+        + String [ ]
+      [227] invokevirtual #48
+        + Methodref [java/lang/StringBuilder.append (Ljava/lang/String;)Ljava/lang/StringBuilder;]
+      [230] ldc #6
+        + String [Code: ]
+      [232] invokevirtual #48
+        + Methodref [java/lang/StringBuilder.append (Ljava/lang/String;)Ljava/lang/StringBuilder;]
+      [235] aload_0 v0
+      [236] getfield #25
+        + Fieldref [com/Free/Final/a.a Lcom/Free/Final/MyActivity;]
+      [239] invokestatic #36
+        + Methodref [com/Free/Final/MyActivity.e (Lcom/Free/Final/MyActivity;)Ljava/util/ArrayList;]
+      [242] iload v5
+      [244] invokevirtual #50
+        + Methodref [java/util/ArrayList.get (I)Ljava/lang/Object;]
+      [247] checkcast #22
+        + Class [java/lang/String]
+      [250] invokevirtual #48
+        + Methodref [java/lang/StringBuilder.append (Ljava/lang/String;)Ljava/lang/StringBuilder;]
+      [253] ldc #4
+        + String [ ]
+      [255] invokevirtual #48
+        + Methodref [java/lang/StringBuilder.append (Ljava/lang/String;)Ljava/lang/StringBuilder;]
+      [258] ldc #5
+        + String [Capital: ]
+      [260] invokevirtual #48
+        + Methodref [java/lang/StringBuilder.append (Ljava/lang/String;)Ljava/lang/StringBuilder;]
+      [263] aload_0 v0
+      [264] getfield #25
+        + Fieldref [com/Free/Final/a.a Lcom/Free/Final/MyActivity;]
+      [267] invokestatic #37
+        + Methodref [com/Free/Final/MyActivity.f (Lcom/Free/Final/MyActivity;)Ljava/util/ArrayList;]
+      [270] iload v5
+      [272] invokevirtual #50
+        + Methodref [java/util/ArrayList.get (I)Ljava/lang/Object;]
+      [275] checkcast #22
+        + Class [java/lang/String]
+      [278] invokevirtual #48
+        + Methodref [java/lang/StringBuilder.append (Ljava/lang/String;)Ljava/lang/StringBuilder;]
+      [281] ldc #4
+        + String [ ]
+      [283] invokevirtual #48
+        + Methodref [java/lang/StringBuilder.append (Ljava/lang/String;)Ljava/lang/StringBuilder;]
+      [286] ldc #10
+        + String [Largest City: ]
+      [288] invokevirtual #48
+        + Methodref [java/lang/StringBuilder.append (Ljava/lang/String;)Ljava/lang/StringBuilder;]
+      [291] aload_0 v0
+      [292] getfield #25
+        + Fieldref [com/Free/Final/a.a Lcom/Free/Final/MyActivity;]
+      [295] invokestatic #39
+        + Methodref [com/Free/Final/MyActivity.g (Lcom/Free/Final/MyActivity;)Ljava/util/ArrayList;]
+      [298] iload v5
+      [300] invokevirtual #50
+        + Methodref [java/util/ArrayList.get (I)Ljava/lang/Object;]
+      [303] checkcast #22
+        + Class [java/lang/String]
+      [306] invokevirtual #48
+        + Methodref [java/lang/StringBuilder.append (Ljava/lang/String;)Ljava/lang/StringBuilder;]
+      [309] ldc #4
+        + String [ ]
+      [311] invokevirtual #48
+        + Methodref [java/lang/StringBuilder.append (Ljava/lang/String;)Ljava/lang/StringBuilder;]
+      [314] ldc #9
+        + String [Joined Canada: ]
+      [316] invokevirtual #48
+        + Methodref [java/lang/StringBuilder.append (Ljava/lang/String;)Ljava/lang/StringBuilder;]
+      [319] aload_0 v0
+      [320] getfield #25
+        + Fieldref [com/Free/Final/a.a Lcom/Free/Final/MyActivity;]
+      [323] invokestatic #40
+        + Methodref [com/Free/Final/MyActivity.h (Lcom/Free/Final/MyActivity;)Ljava/util/ArrayList;]
+      [326] iload v5
+      [328] invokevirtual #50
+        + Methodref [java/util/ArrayList.get (I)Ljava/lang/Object;]
+      [331] checkcast #22
+        + Class [java/lang/String]
+      [334] invokevirtual #48
+        + Methodref [java/lang/StringBuilder.append (Ljava/lang/String;)Ljava/lang/StringBuilder;]
+      [337] ldc #4
+        + String [ ]
+      [339] invokevirtual #48
+        + Methodref [java/lang/StringBuilder.append (Ljava/lang/String;)Ljava/lang/StringBuilder;]
+      [342] ldc #11
+        + String [Population: ]
+      [344] invokevirtual #48
+        + Methodref [java/lang/StringBuilder.append (Ljava/lang/String;)Ljava/lang/StringBuilder;]
+      [347] aload_0 v0
+      [348] getfield #25
+        + Fieldref [com/Free/Final/a.a Lcom/Free/Final/MyActivity;]
+      [351] invokestatic #41
+        + Methodref [com/Free/Final/MyActivity.i (Lcom/Free/Final/MyActivity;)Ljava/util/ArrayList;]
+      [354] iload v5
+      [356] invokevirtual #50
+        + Methodref [java/util/ArrayList.get (I)Ljava/lang/Object;]
+      [359] checkcast #22
+        + Class [java/lang/String]
+      [362] invokevirtual #48
+        + Methodref [java/lang/StringBuilder.append (Ljava/lang/String;)Ljava/lang/StringBuilder;]
+      [365] invokevirtual #49
+        + Methodref [java/lang/StringBuilder.toString ()Ljava/lang/String;]
+      [368] invokevirtual #29
+        + Methodref [android/widget/TextView.setText (Ljava/lang/CharSequence;)V]
+      [371] goto +123 (target=494)
+      [374] aload_0 v0
+      [375] getfield #25
+        + Fieldref [com/Free/Final/a.a Lcom/Free/Final/MyActivity;]
+      [378] invokestatic #42
+        + Methodref [com/Free/Final/MyActivity.j (Lcom/Free/Final/MyActivity;)Landroid/widget/TextView;]
+      [381] new #23
+        + Class [java/lang/StringBuilder]
+      [384] dup
+      [385] invokespecial #47
+        + Methodref [java/lang/StringBuilder.<init> ()V]
+      [388] ldc #12
+        + String [Province: ]
+      [390] invokevirtual #48
+        + Methodref [java/lang/StringBuilder.append (Ljava/lang/String;)Ljava/lang/StringBuilder;]
+      [393] aload_0 v0
+      [394] getfield #25
+        + Fieldref [com/Free/Final/a.a Lcom/Free/Final/MyActivity;]
+      [397] invokestatic #30
+        + Methodref [com/Free/Final/MyActivity.a (Lcom/Free/Final/MyActivity;)Ljava/util/ArrayList;]
+      [400] iload v5
+      [402] invokevirtual #50
+        + Methodref [java/util/ArrayList.get (I)Ljava/lang/Object;]
+      [405] checkcast #22
+        + Class [java/lang/String]
+      [408] invokevirtual #48
+        + Methodref [java/lang/StringBuilder.append (Ljava/lang/String;)Ljava/lang/StringBuilder;]
+      [411] ldc #4
+        + String [ ]
+      [413] invokevirtual #48
+        + Methodref [java/lang/StringBuilder.append (Ljava/lang/String;)Ljava/lang/StringBuilder;]
+      [416] ldc #7
+        + String [Exports: ]
+      [418] invokevirtual #48
+        + Methodref [java/lang/StringBuilder.append (Ljava/lang/String;)Ljava/lang/StringBuilder;]
+      [421] aload_0 v0
+      [422] getfield #25
+        + Fieldref [com/Free/Final/a.a Lcom/Free/Final/MyActivity;]
+      [425] invokestatic #43
+        + Methodref [com/Free/Final/MyActivity.k (Lcom/Free/Final/MyActivity;)Ljava/util/ArrayList;]
+      [428] iload v5
+      [430] invokevirtual #50
+        + Methodref [java/util/ArrayList.get (I)Ljava/lang/Object;]
+      [433] checkcast #22
+        + Class [java/lang/String]
+      [436] invokevirtual #48
+        + Methodref [java/lang/StringBuilder.append (Ljava/lang/String;)Ljava/lang/StringBuilder;]
+      [439] ldc #4
+        + String [ ]
+      [441] invokevirtual #48
+        + Methodref [java/lang/StringBuilder.append (Ljava/lang/String;)Ljava/lang/StringBuilder;]
+      [444] ldc #8
+        + String [Imports: ]
+      [446] invokevirtual #48
+        + Methodref [java/lang/StringBuilder.append (Ljava/lang/String;)Ljava/lang/StringBuilder;]
+      [449] aload_0 v0
+      [450] getfield #25
+        + Fieldref [com/Free/Final/a.a Lcom/Free/Final/MyActivity;]
+      [453] invokestatic #44
+        + Methodref [com/Free/Final/MyActivity.l (Lcom/Free/Final/MyActivity;)Ljava/util/ArrayList;]
+      [456] iload v5
+      [458] invokevirtual #50
+        + Methodref [java/util/ArrayList.get (I)Ljava/lang/Object;]
+      [461] checkcast #22
+        + Class [java/lang/String]
+      [464] invokevirtual #48
+        + Methodref [java/lang/StringBuilder.append (Ljava/lang/String;)Ljava/lang/StringBuilder;]
+      [467] invokevirtual #49
+        + Methodref [java/lang/StringBuilder.toString ()Ljava/lang/String;]
+      [470] invokevirtual #29
+        + Methodref [android/widget/TextView.setText (Ljava/lang/CharSequence;)V]
+      [473] goto +21 (target=494)
+      [476] aload_0 v0
+      [477] getfield #25
+        + Fieldref [com/Free/Final/a.a Lcom/Free/Final/MyActivity;]
+      [480] invokestatic #42
+        + Methodref [com/Free/Final/MyActivity.j (Lcom/Free/Final/MyActivity;)Landroid/widget/TextView;]
+      [483] ldc #13
+        + String [Touch One Of The Red Dots on Each Provinces]
+      [485] invokevirtual #29
+        + Methodref [android/widget/TextView.setText (Ljava/lang/CharSequence;)V]
+      [488] iinc v5, 1
+      [491] goto -437 (target=54)
+      [494] iconst_0
+      [495] ireturn
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 1):
+      + Stack map table attribute (count = 4):
+        - [54] Var: ...[f][f][i], Stack: (empty)
+        - [374] Var: ..., Stack: (empty)
+        - [476] Var: ..., Stack: (empty)
+        - [494] Var: -1, Stack: (empty)
+
+Class file attributes (count = 0):
+

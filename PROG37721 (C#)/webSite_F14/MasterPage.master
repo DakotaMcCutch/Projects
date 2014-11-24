@@ -1,0 +1,68 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .auto-style1 {
+            width: 100%;
+            text-align:center;
+        }
+        a {
+            color: GreenYellow;
+        }
+
+        a:visited {
+            color: yellow;
+        }
+        #form1 {
+            color: #00FF00;
+            background-color: #000000;
+        }
+
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+
+        <table class="auto-style1">
+            <tr>
+                <td style="background-color: #000000; color: greenYellow">Site Heading</td>
+            </tr>
+            <tr>
+                <td style="color: greenYellow; background-color: black">
+                    <asp:Label ID="lblPageTitle" runat="server"></asp:Label>
+                </td>
+            </tr>
+            <tr>
+                <td style="color: greenYellow; background-color: black">
+                    <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/qsControl1.aspx">qsControl1</asp:HyperLink>
+&nbsp;
+                    <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="~/qsControl2.aspx">qsControl2</asp:HyperLink>
+                </td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+            </tr>
+        </table>
+
+    </div>
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+            <asp:Label ID="Label1" runat="server" Text="Pick Your Favorite Color:" style="color: greenYellow; background-color: black"></asp:Label>
+        <p>
+
+            <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/qsPage2.aspx">Blue</asp:HyperLink>
+            <br /><br />
+            <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/qsPage2.aspx">Red</asp:HyperLink>
+
+        </p>
+        </asp:ContentPlaceHolder>
+    </form>
+</body>
+</html>

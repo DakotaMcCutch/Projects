@@ -1,0 +1,70 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Feb 6, 2014, 4:44:06 PM
+    Author     : hofstede
+*/
+#map_canvas
+{
+	padding: 0;
+    position : absolute; 
+    top : 40px;  
+    right : 0; 
+    left : 0;     
+    height: 300px;
+}
+
+#line_canvas
+{    
+    height: 450px;
+}
+
+.Absolute-Center {
+    margin: auto;
+    position: absolute;
+    /* top: 0; */
+    left: 0;
+    /* bottom: 0; */
+    right: 0;
+}
+body{
+    overflow:scroll;
+}
+
+.footerCreds{
+    font-size: smaller;
+    
+    float: right;
+    margin-top: -50px;
+    margin-right: 10px;
+}
+.clientInfo{
+    
+}
+.ui-dialog-contain {
+  width: 92.5%;
+  max-width: 500px;
+  margin: 10% auto 15px auto;
+  padding: 0;
+  position: relative;
+  top: -15px;
+}
+.ui-content-pcontainer {
+  padding: 10px 15px;
+  background-color: white;
+}
+.bh_cv_label{
+    padding-right: 15px;
+}
+.bh_cv_text{
+    font-weight: bold;
+}
+.bh_cv_labelcntr{
+    width: 100%;
+}
+.bh_cv_labeldiv{
+    margin: auto;
+}

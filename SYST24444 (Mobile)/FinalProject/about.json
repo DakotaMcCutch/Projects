@@ -1,0 +1,25 @@
+{
+"students": 
+[
+	{
+		"name" : "Michael Buchok",
+		"login" : "buchok",
+		"number" : "991 331 658"
+	},
+	{
+		"name" : "Rick Pomerleau",
+		"login" : "rpomerleau",
+		"number" : " "
+	},
+	{
+		"name" : "David Philip",
+		"login" : "dphilip",
+		"number" : " "
+	},
+	{
+		"name" : "Dakota McCutcheon",
+		"login" : "dMcCutcheon",
+		"number" : " "
+	}
+	]
+}

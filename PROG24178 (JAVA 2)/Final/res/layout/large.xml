@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:weightSum="1"
+              >
+    <ImageView
+            android:layout_width="649dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView" android:layout_gravity="center_horizontal" android:src="@drawable/provinces"
+            android:layout_weight="0.76"/>
+    <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:layout_weight="0.04"
+            android:layout_gravity="center_horizontal">
+        <RadioButton
+                android:layout_width="121dp"
+                android:layout_height="wrap_content"
+                android:text="Geographic"
+                android:id="@+id/radioButton" android:checked="true"
+                android:layout_gravity="center_horizontal"/>
+        <RadioButton android:layout_width="121dp" android:layout_height="wrap_content" android:text="Financial"
+                     android:id="@+id/radioButton2" android:checked="false"
+                     android:layout_gravity="center_horizontal"/>
+    </RadioGroup>
+    <TextView
+            android:layout_width="279dp"
+            android:layout_height="wrap_content"
+            android:text="Select The Type Of Information That You Want To Be Dispayed"
+            android:id="@+id/textView" android:layout_weight="0.24"
+            android:textSize="10dp" android:layout_gravity="center_horizontal"/>
+</LinearLayout>

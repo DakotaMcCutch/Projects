@@ -1,0 +1,89 @@
+<!--Dakota McCutcheon #991321209 -->
+
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="ISO-8859-1">
+    <title></title>
+    <style>
+        body
+        {
+            background-color:black ;
+            color: yellowgreen;
+        }
+        form
+        {
+            color: Black;
+            border-style:solid;
+            border-width:7px;
+            border-color:yellowgreen;
+            background-color:yellow;
+            position:relative;
+            top:140px;
+            height:50%;
+            width:50%;
+            text-align:center;
+            margin:auto auto;
+            font-size: 20px;
+        }
+        .message
+        {
+            visibility: visible;
+            color: Black;
+            border-style:solid;
+            border-width:7px;
+            border-color:yellowgreen;
+            background-color:yellow;
+            position:relative;
+            top:140px;
+            height:50%;
+            width:50%;
+            text-align:center;
+            margin:auto auto;
+            font-size: 20px;
+        }
+        table
+        {
+            margin:auto auto;
+            height:50%;
+            width:50%;
+        }
+        tr
+        {
+            width: 50%;
+        }
+        img
+        {
+            max-width: 24vw;
+            max-height: 55vh;
+        }
+    </style>
+    <script>
+        function show()
+        {
+
+            document.getElementById("message").style.visibility="visible";
+            document.getElementById("img").style.visibility="visible";
+        }
+    </script>
+</head>
+<body>
+<form action="csvUpload" method="post" enctype="multipart/form-data">
+        <h1>CSV to Database</h1>
+    <p>This Application reads a CSV file and adds the records into database</p>
+    File: <input type="file" name="file"> <br><br>
+    <input type="submit" value="Upload" onclick="show();" />
+    <br>
+    <br>
+</form>
+<br>
+<div id="message" class="message">Please Wait, This might take any where from a few seconds to infinity depending on how many records are needed to be parsed and added to the database. Thank you for you precious time and enjoy the images below.<br>
+    <table>
+    <tr><td><img src="img/7.jpg" height="500" width="470"></td><td><img src="img/8.jpg" height="500" width="470"></td></tr>
+    <tr><td><img src="img/1.jpg" height="500" width="470"></td><td><img src="img/5.jpg" height="500" width="470"></td></tr>
+    <tr><td><img src="img/3.jpg" height="500" width="470"></td><td><img src="img/6.jpg" height="500" width="470"></td></tr>
+    <tr><td><img src="img/2.jpg" height="500" width="470"></td><td><img src="img/4.jpg" height="500" width="470"></td></tr>
+    </table>
+</div>
+</body>
+</html>

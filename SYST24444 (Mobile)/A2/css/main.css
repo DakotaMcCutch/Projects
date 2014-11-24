@@ -1,0 +1,38 @@
+img
+{
+    height: 30.0vh;
+    width:25.0vw;
+}
+.cover
+{
+    text-align: center;
+    font-size: 3.0vmin;
+}
+.footer
+{
+    text-align: center;
+    font-size: 1.0vmax;
+}
+span
+{
+    font-size: 2.0vmin;
+}
+table, tr ,td, p
+{
+    margin: auto auto;
+    font-size: 3.0vmin;
+}
+html
+{
+    font-size: 1.5vmin;
+}
+.ui-header
+{
+    text-align: center;
+    font-size: 3.5vmin;
+}
+.ui-title
+{
+    text-align: center;
+    font-size: 3.5vmin;
+}

@@ -1,0 +1,56 @@
+html, body
+{
+    width:98%;
+    height:98%;
+}
+body
+{
+    background-color:black ;
+    color: yellowgreen;
+}
+table
+{
+    border: 1px solid yellowgreen;
+    color: yellowgreen;
+    border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto;
+    height: 99%;
+    width: 99%;
+
+}
+tr, td,th
+{
+    border: 1px solid gold;
+    padding: 0px;
+    color: greenyellow;
+    height: 25%;
+    width:25%;
+    font-size: 2.0vmin;
+    text-align: center;;
+}
+th
+{
+    background: grey;
+    font-size:3.0vmin;
+}
+h1 {
+    text-align: center;
+    font-size: 4.0vmin;
+
+}
+.storePic {
+    text-align: center;
+    font-size: 4.0vmin;
+
+}
+.storeLoc {
+    text-align: center;
+    font-size: 2.5vmin;
+
+}
+img
+{
+    height: 12.0vh;
+    width:25.0vw;
+}

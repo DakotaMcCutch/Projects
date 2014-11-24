@@ -1,0 +1,8 @@
+com.Free.Final.BuildConfig
+com.Free.Final.R
+com.Free.Final.R$attr
+com.Free.Final.R$drawable
+com.Free.Final.R$id
+com.Free.Final.R$layout
+com.Free.Final.R$raw
+com.Free.Final.R$string

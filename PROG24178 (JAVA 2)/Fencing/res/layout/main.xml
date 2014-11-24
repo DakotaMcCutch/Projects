@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:weightSum="1">
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sheridan Fencing Supplies"
+            android:id="@+id/textView" android:layout_gravity="center_horizontal" android:textSize="20dp"/>
+    <Space
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.09"/>
+    <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="All Weather"
+            android:id="@+id/checkBox" android:layout_gravity="center_horizontal" android:checked="false"
+            android:textSize="20dp"/>
+    <Space
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.07"/>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Number Of Feet"
+            android:id="@+id/textView2" android:layout_gravity="center_horizontal" android:textSize="20dp"/>
+    <EditText
+            android:layout_width="279dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/editText" android:layout_gravity="center_horizontal"
+            android:textColor="@android:color/white" android:autoText="false" android:shadowColor="#00fffd"
+            android:clickable="true" android:editable="true" android:textAlignment="center"/>
+    <Space
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.08"/>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Total Cost"
+            android:id="@+id/textView3" android:layout_gravity="center_horizontal" android:textSize="20dp"/>
+    <EditText
+            android:layout_width="209dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/editText2" android:layout_gravity="center_horizontal"
+            android:textColor="@android:color/black" android:background="@android:color/white"/>
+    <Space
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.08"/>
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Calculate"
+            android:id="@+id/button" android:layout_gravity="center_horizontal" android:clickable="true"/>
+</LinearLayout>
+

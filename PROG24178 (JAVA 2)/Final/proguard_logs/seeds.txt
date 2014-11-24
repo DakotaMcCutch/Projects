@@ -1,0 +1,13 @@
+com.Free.Final.MyActivity
+com.Free.Final.MyActivity: MyActivity()
+com.Free.Final.R$drawable: int ic_launcher
+com.Free.Final.R$drawable: int provinces
+com.Free.Final.R$id: int imageView
+com.Free.Final.R$id: int radioButton
+com.Free.Final.R$id: int radioButton2
+com.Free.Final.R$id: int textView
+com.Free.Final.R$layout: int large
+com.Free.Final.R$layout: int normal
+com.Free.Final.R$raw: int prov
+com.Free.Final.R$raw: int prov2
+com.Free.Final.R$string: int app_name

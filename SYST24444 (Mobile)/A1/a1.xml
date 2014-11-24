@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<!-- Include your name in this opening and also the closing tag -->
+<mccutdak>
+
+	<!-- Include the name of the bookstore -->
+	<bookstore title="Area 51 Books">
+	
+		<!-- Include a picture of the front of the store -->
+		<storefrontPicture>front.jpg</storefrontPicture>
+        <!--http://mattcantdraw.deviantart.com/art/Evil-Helmets-R-Us-349167631-->
+
+		<!-- Include the town where the store is located -->
+		<town>Tharwa</town>
+		
+		<!-- Include the street address in attribute and closest intersection in text area -->
+		<intersection mainStreet=" 99 Bridge Street">Union Street</intersection>
+
+		<!-- For each book include: 
+					Book title
+					Picture of the front of the book
+					Price of the book
+		-->
+		<book isbn="978-0-449-81953-1">
+			<title>Eragon</title>
+			<jacketPicture>Eragon.jpg</jacketPicture>
+			<price>$50.00</price>
+		</book>
+		<book isbn="978-0-375-82670-2">
+			<title>Eldest</title>
+			<jacketPicture>eldest.jpg</jacketPicture>
+			<price>$21.00</price>
+		</book>
+		<book isbn="978-0-375-89356-8">
+			<title>Brisinger</title>
+			<jacketPicture>Brisinger.jpg</jacketPicture>
+			<price>$11.99</price>
+		</book>
+        <book isbn="978-0-375-85611-2">
+            <title>Inheritance</title>
+            <jacketPicture>Inheritance.jpg</jacketPicture>
+            <price>$27.99</price>
+        </book>
+	</bookstore>
+</mccutdak>
+
+
