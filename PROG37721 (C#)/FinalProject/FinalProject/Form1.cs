@@ -1,38 +1,28 @@
 ﻿﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Diagnostics;
 using System.Data.SqlClient;
-using System.Configuration;
-using System.Globalization;
+using System.Windows.Forms;
 
 namespace FinalProject
 {
     public partial class Form1 : Form
     {
-        private string mainPatient = "";
         private SqlConnection conn = null;
         private SqlDataAdapter da = null;
         private DataSet ds = null;
         private int rowIndex = -1;
-        private string sql = null;
-        string gender = "";
-        string marital = "";
-        string relation = "";
-        string dentConsent = "No";
-        string physConsent = "No";
-        private IFormatProvider culture = new CultureInfo("en-US", true);
+        private string gender = "";
+        private string marital = "";
+        private string relation = "";
+        private string dentConsent = "No";
+        private string physConsent = "No";
 
         public Form1()
         {
             InitializeComponent();
         }
+
         private void startUp()
         {
             dtpDOB.MinDate = DateTime.Today.AddYears(-99);
@@ -41,6 +31,7 @@ namespace FinalProject
             dtpDOB.CustomFormat = "MM/dd/yyyy";
             dtpDOB.Format = DateTimePickerFormat.Custom;
         }
+
         private void Form1_Load(object sender, EventArgs e)
         {
             startUp();
@@ -49,33 +40,32 @@ namespace FinalProject
             dg1.KeyDown += dg1_KeyDown;
             dtpDOB.ValueChanged += dtpDOB_ValueChanged;
             txtName.KeyPress += txtName_KeyPress;
-            txtGuardName.KeyPress += txtGuardName_KeyPress;
-            txtEmergName.KeyPress += txtEmergName_KeyPress;
-            txtFormerDent.KeyPress += txtFormerDent_KeyPress;
-            txtDoctor.KeyPress += txtDoctor_KeyPress;
-            txtHomePhoneNum.KeyPress += txtHomePhoneNum_KeyPress;
-            txtMobilePhoneNum.KeyPress += txtMobilePhoneNum_KeyPress;
-            txtEmergHome.KeyPress += txtEmergHome_KeyPress;
-            txtEmergMobile.KeyPress += txtEmergMobile_KeyPress;
-            txtInsurancePhoneNum.KeyPress += txtInsurancePhoneNum_KeyPress;
-            txtDoctorNum.KeyPress += txtDoctorNum_KeyPress;
-            txtDentNum.KeyPress += txtDentNum_KeyPress;
+            txtGuardName.KeyPress += txtName_KeyPress;
+            txtEmergName.KeyPress += txtName_KeyPress;
+            txtFormerDent.KeyPress += txtName_KeyPress;
+            txtDoctor.KeyPress += txtName_KeyPress;
+            txtHomePhoneNum.KeyPress += txtPhoneNum_KeyPress;
+            txtMobilePhoneNum.KeyPress += txtPhoneNum_KeyPress;
+            txtEmergHome.KeyPress += txtPhoneNum_KeyPress;
+            txtEmergMobile.KeyPress += txtPhoneNum_KeyPress;
+            txtInsurancePhoneNum.KeyPress += txtPhoneNum_KeyPress;
+            txtDoctorNum.KeyPress += txtPhoneNum_KeyPress;
+            txtDentNum.KeyPress += txtPhoneNum_KeyPress;
             txtSSNum.KeyPress += txtSSNum_KeyPress;
             txtProv.KeyPress += txtProv_KeyPress;
-            txtInsurProv.KeyPress += txtInsurProv_KeyPress;
+            txtInsurProv.KeyPress += txtProv_KeyPress;
             txtPolicyNum.KeyPress += txtPolicyNum_KeyPress;
             txtCity.KeyPress += txtCity_KeyPress;
-            txtInsurCity.KeyPress += txtInsurCity_KeyPress;
+            txtInsurCity.KeyPress += txtCity_KeyPress;
             txtStreet.KeyPress += txtStreet_KeyPress;
             txtInsurStreet.KeyPress += txtStreet_KeyPress;
             txtInCompany.KeyPress += txtInCompany_KeyPress;
             txtAptNum.KeyPress += txtAptNum_KeyPress;
-            txtInsurOfficeNum.KeyPress += txtInsurOfficeNum_KeyPress;
+            txtInsurOfficeNum.KeyPress += txtAptNum_KeyPress;
             txtZip.KeyPress += txtZip_KeyPress;
-            txtInsurZip.KeyPress += txtInsurZip_KeyPress;
+            txtInsurZip.KeyPress += txtZip_KeyPress;
             txtEmpSch.KeyPress += txtEmpSch_KeyPress;
             txtPatientId.KeyPress += txtPatientId_KeyPress;
-
 
             TextBox[] t = { txtPatientId, txtName, txtGuardName, txtStreet, txtAptNum, txtCity, txtProv, txtZip, txtHomePhoneNum, txtMobilePhoneNum, txtEmpSch, txtEmergName, txtEmergHome, txtEmergMobile, txtInCompany, txtSSNum, txtPolicyNum, txtInsurStreet, txtInsurOfficeNum, txtInsurCity, txtInsurProv, txtInsurZip, txtPolicyNum, txtInsurancePhoneNum, txtFormerDent, txtDentNum, txtDoctor, txtDoctorNum };
 
@@ -84,19 +74,16 @@ namespace FinalProject
                 tb.ContextMenu = new System.Windows.Forms.ContextMenu();
 
                 tb.ShortcutsEnabled = false;
-               
             }
-
-            getData();//must be after everything do put anything after this
-            test();
+            getData();
         }
 
-        void dtpDOB_ValueChanged(object sender, EventArgs e)
+        private void dtpDOB_ValueChanged(object sender, EventArgs e)
         {
             SendKeys.Send("{Right}");
         }
 
-        void dg1_KeyDown(object sender, KeyEventArgs e)
+        private void dg1_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Escape)
             {
@@ -112,7 +99,7 @@ namespace FinalProject
             }
         }
 
-        void txtPatientId_KeyPress(object sender, KeyPressEventArgs e)
+        private void txtPatientId_KeyPress(object sender, KeyPressEventArgs e)
         {
             int c = e.KeyChar;
             int len = ((TextBox)sender).Text.Length;
@@ -126,173 +113,7 @@ namespace FinalProject
             }
         }
 
-        void txtEmpSch_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            int c = e.KeyChar;
-            int len = ((TextBox)sender).Text.Length;
-            ((TextBox)sender).SelectionStart = len;
-            int iCount = txtInCompany.Text.Split(' ').Length - 1;
-            int iAnd = txtInCompany.Text.Split('&').Length - 1;
-            int iDot = txtInCompany.Text.Split('.').Length - 1;
-            if (c != 8)
-            {
-                if ((c < 63 || c > 90) && (c < 97 || c > 122) && (c != 32) && (c != 38) && (c != 46) && (c < 48 || c > 57))
-                {
-                    e.Handled = true;
-                }
-                if (c != 8)
-                {
-                    if (c == 32)
-                    {
-                        if (((TextBox)sender).Text.Length < 1)
-                        {
-                            e.Handled = true;
-                        }
-                        if (iCount >= 1 && ((TextBox)sender).Text.LastIndexOf(" ") == len - 1)
-                        {
-                            e.Handled = true;
-                        }
-                    }
-                    else if (c == 38)
-                    {
-                        if (((TextBox)sender).Text.Length < 1)
-                        {
-                            e.Handled = true;
-                        }
-                        if (iAnd >= 1 && ((TextBox)sender).Text.LastIndexOf("&") == len - 1)
-                        {
-                            e.Handled = true;
-                        }
-                    }
-                    else if (c == 46)
-                    {
-                        if (((TextBox)sender).Text.Length < 1)
-                        {
-                            e.Handled = true;
-                        }
-                        if (iDot >= 1 && ((TextBox)sender).Text.LastIndexOf(".") == len - 1)
-                        {
-                            e.Handled = true;
-                        }
-                    }
-                    else if (len > 150)
-                    {
-                        e.Handled = true;
-                    }
-                    else
-                    {
-                        if ((c < 65 || c > 90) && (c < 97 || c > 122) && (c < 48 || c > 57))// not Letter
-                        {
-                            e.Handled = true;
-                        }
-                        if ((((TextBox)sender).Text.LastIndexOf(" ") == len - 1) && (c > 96 && c < 123))//space first char lower
-                        {
-                            e.KeyChar = (char)(c - 32);
-                        }
-                        else if ((((TextBox)sender).Text.LastIndexOf(" ") < len - 1) && (c > 64 && c < 91))//space first char uppercase
-                        {
-                            e.KeyChar = (char)(c + 32);
-                        }
-                    }
-                }
-            }
-        }
-
-        void txtInsurZip_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            int c = e.KeyChar;
-            int len = ((TextBox)sender).Text.Length;
-            ((TextBox)sender).SelectionStart = len;
-            if (c != 8)
-            {
-                if ((c > 64 && c < 91) && (c < 96 || c > 122) && (c != 32))
-                {
-                    e.Handled = true;
-                }
-                else
-                {
-                    if (len >= 0 && (c > 96 && c < 123))
-                    {
-                        e.KeyChar = (char)(c - 32);
-                    }
-                    if (len == 3)
-                    {
-                        if (c != 32)
-                        {
-                            SendKeys.SendWait(" ");
-                        }
-
-                    }
-                    if (len > 6)
-                    {
-                        e.Handled = true;
-                    }
-                }
-            }
-        }
-
-        void txtZip_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            int c = e.KeyChar;
-            int len = ((TextBox)sender).Text.Length;
-            ((TextBox)sender).SelectionStart = len;
-            if (c != 8)
-            {
-                if ((c > 64 && c < 91) && (c < 96 || c > 122) && (c != 32))
-                {
-                    e.Handled = true;
-                }
-                else
-                {
-                    if (len >= 0 && (c > 96 && c < 123))
-                    {
-                        e.KeyChar = (char)(c - 32);
-                    }
-                    if (len == 3)
-                    {
-                        if (c != 32)
-                        {
-                            SendKeys.SendWait(" ");
-                        }
-
-                    }
-                    if (len > 6)
-                    {
-                        e.Handled = true;
-                    }
-                }
-            }
-        }
-
-        void txtInsurOfficeNum_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            int c = e.KeyChar;
-            int len = ((TextBox)sender).Text.Length;
-            ((TextBox)sender).SelectionStart = len;
-            if (c != 8)
-            {
-                if (c < 48 || c > 57)
-                {
-                    e.Handled = true;
-                }
-            }
-        }
-
-        void txtAptNum_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            int c = e.KeyChar;
-            int len = ((TextBox)sender).Text.Length;
-            ((TextBox)sender).SelectionStart = len;
-            if (c != 8)
-            {
-                if (c < 48 || c > 57)
-                {
-                    e.Handled = true;
-                }
-            }
-        }
-
-        void txtInCompany_KeyPress(object sender, KeyPressEventArgs e)
+        private void txtEmpSch_KeyPress(object sender, KeyPressEventArgs e)
         {
             int c = e.KeyChar;
             int len = ((TextBox)sender).Text.Length;
@@ -310,7 +131,7 @@ namespace FinalProject
                 {
                     if (c == 32)
                     {
-                        if (txtInCompany.Text.Length < 1)
+                        if (((TextBox)sender).Text.Length < 1)
                         {
                             e.Handled = true;
                         }
@@ -364,12 +185,151 @@ namespace FinalProject
             }
         }
 
-        void txtStreet_KeyPress(object sender, KeyPressEventArgs e)
+        private void txtZip_KeyPress(object sender, KeyPressEventArgs e)
         {
             int c = e.KeyChar;
             int len = ((TextBox)sender).Text.Length;
             ((TextBox)sender).SelectionStart = len;
-            int iCount = txtStreet.Text.Split(' ').Length - 1;
+            if (c != 8)
+            {
+                if ((c < 63 || c > 90) && (c < 97 || c > 122) && (c != 32) && (c < 48 || c > 57))
+                {
+                    e.Handled = true;
+                }
+                else
+                {
+                    if ((len == 0) || (len == 2) || (len == 5))
+                    {
+                        if (c > 96 && c < 123)
+                        {
+                            e.KeyChar = (char)(c - 32);
+                        }
+                        else
+                        {
+                            e.Handled = true;
+                        }
+                    }
+                    else if (len == 3)
+                    {
+                        if ((c != 32))
+                        {
+                            if ((c < 48 || c > 57))
+                            {
+                                e.Handled = true;
+                            }
+                            else
+                            {
+                                SendKeys.SendWait(" ");
+                            }
+                        }
+                    }
+                    else if ((len == 1) || (len == 4) || (len == 6))
+                    {
+                        if (c < 48 || c > 57)
+                        {
+                            e.Handled = true;
+                        }
+                    }
+                    if (len > 6)
+                    {
+                        e.Handled = true;
+                    }
+                }
+            }
+        }
+
+        private void txtAptNum_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            int c = e.KeyChar;
+            int len = ((TextBox)sender).Text.Length;
+            ((TextBox)sender).SelectionStart = len;
+            if (c != 8)
+            {
+                if (c < 48 || c > 57)
+                {
+                    e.Handled = true;
+                }
+            }
+        }
+
+        private void txtInCompany_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            int c = e.KeyChar;
+            int len = ((TextBox)sender).Text.Length;
+            ((TextBox)sender).SelectionStart = len;
+            int iCount = ((TextBox)sender).Text.Split(' ').Length - 1;
+            int iAnd = ((TextBox)sender).Text.Split('&').Length - 1;
+            int iDot = ((TextBox)sender).Text.Split('.').Length - 1;
+            if (c != 8)
+            {
+                if ((c < 63 || c > 90) && (c < 97 || c > 122) && (c != 32) && (c != 38) && (c != 46) && (c < 48 || c > 57))
+                {
+                    e.Handled = true;
+                }
+                if (c != 8)
+                {
+                    if (c == 32)
+                    {
+                        if (((TextBox)sender).Text.Length < 1)
+                        {
+                            e.Handled = true;
+                        }
+                        if (iCount >= 1 && ((TextBox)sender).Text.LastIndexOf(" ") == len - 1)
+                        {
+                            e.Handled = true;
+                        }
+                    }
+                    else if (c == 38)
+                    {
+                        if (((TextBox)sender).Text.Length < 1)
+                        {
+                            e.Handled = true;
+                        }
+                        if (iAnd >= 1 && ((TextBox)sender).Text.LastIndexOf("&") == len - 1)
+                        {
+                            e.Handled = true;
+                        }
+                    }
+                    else if (c == 46)
+                    {
+                        if (((TextBox)sender).Text.Length < 1)
+                        {
+                            e.Handled = true;
+                        }
+                        if (iDot >= 1 && ((TextBox)sender).Text.LastIndexOf(".") == len - 1)
+                        {
+                            e.Handled = true;
+                        }
+                    }
+                    else if (len > 150)
+                    {
+                        e.Handled = true;
+                    }
+                    else
+                    {
+                        if ((c < 65 || c > 90) && (c < 97 || c > 122) && (c < 48 || c > 57))// not Letter
+                        {
+                            e.Handled = true;
+                        }
+                        if ((((TextBox)sender).Text.LastIndexOf(" ") == len - 1) && (c > 96 && c < 123))//space first char lower
+                        {
+                            e.KeyChar = (char)(c - 32);
+                        }
+                        else if ((((TextBox)sender).Text.LastIndexOf(" ") < len - 1) && (c > 64 && c < 91))//space first char uppercase
+                        {
+                            e.KeyChar = (char)(c + 32);
+                        }
+                    }
+                }
+            }
+        }
+
+        private void txtStreet_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            int c = e.KeyChar;
+            int len = ((TextBox)sender).Text.Length;
+            ((TextBox)sender).SelectionStart = len;
+            int iCount = ((TextBox)sender).Text.Split(' ').Length - 1;
             if (c != 8)
             {
                 if (c == 32)
@@ -420,7 +380,7 @@ namespace FinalProject
             }
         }
 
-        void txtInsurCity_KeyPress(object sender, KeyPressEventArgs e)
+        private void txtCity_KeyPress(object sender, KeyPressEventArgs e)
         {
             int c = e.KeyChar;
             int len = ((TextBox)sender).Text.Length;
@@ -464,51 +424,7 @@ namespace FinalProject
             }
         }
 
-        void txtCity_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            int c = e.KeyChar;
-            int len = ((TextBox)sender).Text.Length;
-            ((TextBox)sender).SelectionStart = len;
-            if (c != 8)
-            {
-                if ((c < 63 || c > 90) && (c < 97 || c > 122) && (c != 32))
-                {
-                    e.Handled = true;
-                }
-                if (len < 2)
-                {
-                    if (c == 32)
-                    {
-                        e.Handled = true;
-                    }
-                    else if (len == 0 && (c > 96 && c < 123))
-                    {
-                        e.KeyChar = (char)(c - 32);
-                    }
-                    else if (len > 0 && (c < 91 && c > 64))
-                    {
-                        e.KeyChar = (char)(c + 32);
-                    }
-                }
-                else
-                {
-                    if (c == 32)
-                    {
-                        e.Handled = true;
-                    }
-                    else if (len == 0 && (c > 96 && c < 123))
-                    {
-                        e.KeyChar = (char)(c - 32);
-                    }
-                    else if (len > 0 && (c < 91 && c > 64))
-                    {
-                        e.KeyChar = (char)(c + 32);
-                    }
-                }
-            }
-        }
-
-        void txtPolicyNum_KeyPress(object sender, KeyPressEventArgs e)
+        private void txtPolicyNum_KeyPress(object sender, KeyPressEventArgs e)
         {
             int c = e.KeyChar;
             int len = ((TextBox)sender).Text.Length;
@@ -522,7 +438,7 @@ namespace FinalProject
             }
         }
 
-        void txtInsurProv_KeyPress(object sender, KeyPressEventArgs e)
+        private void txtProv_KeyPress(object sender, KeyPressEventArgs e)
         {
             int c = e.KeyChar;
             int len = ((TextBox)sender).Text.Length;
@@ -551,36 +467,7 @@ namespace FinalProject
             }
         }
 
-        void txtProv_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            int c = e.KeyChar;
-            int len = ((TextBox)sender).Text.Length;
-            ((TextBox)sender).SelectionStart = len;
-            if (c != 8)
-            {
-                if ((c < 63 || c > 90) && (c < 97 || c > 122) && (c != 32))
-                {
-                    e.Handled = true;
-                }
-                if (len > 1)
-                {
-                    e.Handled = true;
-                }
-                else
-                {
-                    if (c == 32)
-                    {
-                        e.Handled = true;
-                    }
-                    else if (len >= 0 && (c > 96 && c < 123))
-                    {
-                        e.KeyChar = (char)(c - 32);
-                    }
-                }
-            }
-        }
-
-        void txtSSNum_KeyPress(object sender, KeyPressEventArgs e)
+        private void txtSSNum_KeyPress(object sender, KeyPressEventArgs e)
         {
             int c = e.KeyChar;
             int len = ((TextBox)sender).Text.Length;
@@ -591,436 +478,58 @@ namespace FinalProject
                 {
                     if (c != 32)
                     {
-                        SendKeys.SendWait(" ");
-                    }
-
-                }
-                else
-                {
-                    if (c < 48 || c > 57)
-                    {
-                        e.Handled = true;
-                    }
-                }
-            }
-        }
-
-        private void txtDentNum_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            int c = e.KeyChar;
-            int len = ((TextBox)sender).Text.Length;
-            ((TextBox)sender).SelectionStart = len;
-            if (c != 8)
-            {
-                if (len == 3 || len == 7)
-                {
-                    if (c != 45)
-                    {
-                        SendKeys.SendWait("-");
-                    }
-
-                }
-                else
-                {
-                    if (c < 48 || c > 57)
-                    {
-                        e.Handled = true;
-                    }
-                }
-            }
-        }
-
-        void txtDoctorNum_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            int c = e.KeyChar;
-            int len = ((TextBox)sender).Text.Length;
-            ((TextBox)sender).SelectionStart = len;
-            if (c != 8)
-            {
-                if (len == 3 || len == 7)
-                {
-                    if (c != 45)
-                    {
-                        SendKeys.SendWait("-");
-                    }
-
-                }
-                else
-                {
-                    if (c < 48 || c > 57)
-                    {
-                        e.Handled = true;
-                    }
-                }
-            }
-        }
-
-        void txtInsurancePhoneNum_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            int c = e.KeyChar;
-            int len = ((TextBox)sender).Text.Length;
-            ((TextBox)sender).SelectionStart = len;
-            if (c != 8)
-            {
-                if (len == 3 || len == 7)
-                {
-                    if (c != 45)
-                    {
-                        SendKeys.SendWait("-");
-                    }
-
-                }
-                else
-                {
-                    if (c < 48 || c > 57)
-                    {
-                        e.Handled = true;
-                    }
-                }
-            }
-        }
-
-        void txtEmergMobile_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            int c = e.KeyChar;
-            int len = ((TextBox)sender).Text.Length;
-            ((TextBox)sender).SelectionStart = len;
-            if (c != 8)
-            {
-                if (len == 3 || len == 7)
-                {
-                    if (c != 45)
-                    {
-                        SendKeys.SendWait("-");
-                    }
-
-                }
-                else
-                {
-                    if (c < 48 || c > 57)
-                    {
-                        e.Handled = true;
-                    }
-                }
-            }
-        }
-
-        private void txtEmergHome_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            int c = e.KeyChar;
-            int len = ((TextBox)sender).Text.Length;
-            ((TextBox)sender).SelectionStart = len;
-            if (c != 8)
-            {
-                if (len == 3 || len == 7)
-                {
-                    if (c != 45)
-                    {
-                        SendKeys.SendWait("-");
-                    }
-
-                }
-                else
-                {
-                    if (c < 48 || c > 57)
-                    {
-                        e.Handled = true;
-                    }
-                }
-            }
-        }
-
-        private void txtMobilePhoneNum_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            int c = e.KeyChar;
-            int len = ((TextBox)sender).Text.Length;
-            ((TextBox)sender).SelectionStart = len;
-            if (c != 8)
-            {
-                if (len == 3 || len == 7)
-                {
-                    if (c != 45)
-                    {
-                        SendKeys.SendWait("-");
-                    }
-
-                }
-                else
-                {
-                    if (c < 48 || c > 57)
-                    {
-                        e.Handled = true;
-                    }
-                }
-            }
-        }
-
-        void txtHomePhoneNum_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            int c = e.KeyChar;
-            int len = ((TextBox)sender).Text.Length;
-            ((TextBox)sender).SelectionStart = len;
-            if (c != 8)
-            {
-                if (len == 3 || len == 7)
-                {
-                    if (c != 45)
-                    {
-                        SendKeys.SendWait("-");
-                    }
-
-                }
-                else
-                {
-                    if (c < 48 || c > 57)
-                    {
-                        e.Handled = true;
-                    }
-                }
-            }
-        }
-
-        private void txtDoctor_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            int c = e.KeyChar;
-            int len = ((TextBox)sender).Text.Length;
-            ((TextBox)sender).SelectionStart = len;
-            if (c != 8)
-            {
-                if ((c < 63 || c > 90) && (c < 97 || c > 122) && (c != 32))
-                {
-                    e.Handled = true;
-                }
-                if (len < 2)
-                {
-                    if (c == 32)
-                    {
-                        e.Handled = true;
-                    }
-                    else if (len == 0 && (c > 96 && c < 123))
-                    {
-                        e.KeyChar = (char)(c - 32);
-                    }
-                    else if (len > 0 && (c < 91 && c > 64))
-                    {
-                        e.KeyChar = (char)(c + 32);
-                    }
-                }
-                else
-                {
-                    if (((TextBox)sender).Text.IndexOf(" ") == -1)
-                    {
-                        if (c > 64 && c < 91)
-                        {
-                            e.KeyChar = (char)(c + 32);
-                        }
-                    }
-                    else if (c == 32)
-                    {
-                        if (((TextBox)sender).Text.IndexOf(" ") > -1)
+                        if ((c < 48 || c > 57))
                         {
                             e.Handled = true;
                         }
-                    }
-                    else if (((TextBox)sender).Text.IndexOf(" ") == len - 1)
-                    {
-                        if (c > 96 && c < 123)
+                        else
                         {
-                            e.KeyChar = (char)(c - 32);
+                            SendKeys.SendWait(" ");
                         }
                     }
-                    else if (((TextBox)sender).Text.IndexOf(" ") < len - 1)
+                }
+                else
+                {
+                    if (c < 48 || c > 57)
                     {
-                        if (c > 64 && c < 91)
-                        {
-                            e.KeyChar = (char)(c + 32);
-                        }
+                        e.Handled = true;
                     }
                 }
             }
         }
 
-        void txtFormerDent_KeyPress(object sender, KeyPressEventArgs e)
+        private void txtPhoneNum_KeyPress(object sender, KeyPressEventArgs e)
         {
             int c = e.KeyChar;
             int len = ((TextBox)sender).Text.Length;
             ((TextBox)sender).SelectionStart = len;
             if (c != 8)
             {
-                if ((c < 63 || c > 90) && (c < 97 || c > 122) && (c != 32))
+                if (len == 3 || len == 7)
                 {
-                    e.Handled = true;
-                }
-                if (len < 2)
-                {
-                    if (c == 32)
+                    if (c != 45)
                     {
-                        e.Handled = true;
-                    }
-                    else if (len == 0 && (c > 96 && c < 123))
-                    {
-                        e.KeyChar = (char)(c - 32);
-                    }
-                    else if (len > 0 && (c < 91 && c > 64))
-                    {
-                        e.KeyChar = (char)(c + 32);
+                        if ((c < 48 || c > 57))
+                        {
+                            e.Handled = true;
+                        }
+                        else
+                        {
+                            SendKeys.SendWait("-");
+                        }
                     }
                 }
                 else
                 {
-                    if (((TextBox)sender).Text.IndexOf(" ") == -1)
+                    if (c < 48 || c > 57)
                     {
-                        if (c > 64 && c < 91)
-                        {
-                            e.KeyChar = (char)(c + 32);
-                        }
-                    }
-                    else if (c == 32)
-                    {
-                        if (((TextBox)sender).Text.IndexOf(" ") > -1)
-                        {
-                            e.Handled = true;
-                        }
-                    }
-                    else if (((TextBox)sender).Text.IndexOf(" ") == len - 1)
-                    {
-                        if (c > 96 && c < 123)
-                        {
-                            e.KeyChar = (char)(c - 32);
-                        }
-                    }
-                    else if (((TextBox)sender).Text.IndexOf(" ") < len - 1)
-                    {
-                        if (c > 64 && c < 91)
-                        {
-                            e.KeyChar = (char)(c + 32);
-                        }
+                        e.Handled = true;
                     }
                 }
             }
         }
 
-        void txtEmergName_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            int c = e.KeyChar;
-            int len = ((TextBox)sender).Text.Length;
-            ((TextBox)sender).SelectionStart = len;
-            if (c != 8)
-            {
-                if ((c < 63 || c > 90) && (c < 97 || c > 122) && (c != 32))
-                {
-                    e.Handled = true;
-                }
-                if (len < 2)
-                {
-                    if (c == 32)
-                    {
-                        e.Handled = true;
-                    }
-                    else if (len == 0 && (c > 96 && c < 123))
-                    {
-                        e.KeyChar = (char)(c - 32);
-                    }
-                    else if (len > 0 && (c < 91 && c > 64))
-                    {
-                        e.KeyChar = (char)(c + 32);
-                    }
-                }
-                else
-                {
-                    if (((TextBox)sender).Text.IndexOf(" ") == -1)
-                    {
-                        if (c > 64 && c < 91)
-                        {
-                            e.KeyChar = (char)(c + 32);
-                        }
-                    }
-                    else if (c == 32)
-                    {
-                        if (((TextBox)sender).Text.IndexOf(" ") > -1)
-                        {
-                            e.Handled = true;
-                        }
-                    }
-                    else if (((TextBox)sender).Text.IndexOf(" ") == len - 1)
-                    {
-                        if (c > 96 && c < 123)
-                        {
-                            e.KeyChar = (char)(c - 32);
-                        }
-                    }
-                    else if (((TextBox)sender).Text.IndexOf(" ") < len - 1)
-                    {
-                        if (c > 64 && c < 91)
-                        {
-                            e.KeyChar = (char)(c + 32);
-                        }
-                    }
-                }
-            }
-        }
-
-        void txtGuardName_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            int c = e.KeyChar;
-            int len = ((TextBox)sender).Text.Length;
-            ((TextBox)sender).SelectionStart = len;
-            if (c != 8)
-            {
-                if ((c < 63 || c > 90) && (c < 97 || c > 122) && (c != 32))
-                {
-                    e.Handled = true;
-                }
-                if (len < 2)
-                {
-                    if (c == 32)
-                    {
-                        e.Handled = true;
-                    }
-                    else if (len == 0 && (c > 96 && c < 123))
-                    {
-                        e.KeyChar = (char)(c - 32);
-                    }
-                    else if (len > 0 && (c < 91 && c > 64))
-                    {
-                        e.KeyChar = (char)(c + 32);
-                    }
-                }
-                else
-                {
-                    if (((TextBox)sender).Text.IndexOf(" ") == -1)
-                    {
-                        if (c > 64 && c < 91)
-                        {
-                            e.KeyChar = (char)(c + 32);
-                        }
-                    }
-                    else if (c == 32)
-                    {
-                        if (((TextBox)sender).Text.IndexOf(" ") > -1)
-                        {
-                            e.Handled = true;
-                        }
-                    }
-                    else if (((TextBox)sender).Text.IndexOf(" ") == len - 1)
-                    {
-                        if (c > 96 && c < 123)
-                        {
-                            e.KeyChar = (char)(c - 32);
-                        }
-                    }
-                    else if (((TextBox)sender).Text.IndexOf(" ") < len - 1)
-                    {
-                        if (c > 64 && c < 91)
-                        {
-                            e.KeyChar = (char)(c + 32);
-                        }
-                    }
-                }
-            }
-        }
-
-        void txtName_KeyPress(object sender, KeyPressEventArgs e)
+        private void txtName_KeyPress(object sender, KeyPressEventArgs e)
         {
             int c = e.KeyChar;
             int len = ((TextBox)sender).Text.Length;
@@ -1081,18 +590,13 @@ namespace FinalProject
             }
         }
 
-        void dg1_Click(object sender, EventArgs e)
+        private void dg1_Click(object sender, EventArgs e)
         {
             populateGrid();
         }
 
         private void populateGrid()
         {
-            //dg1.CurrentRow.Selected = true;
-            //mainPatient = dg1.CurrentRow.Cells[0].Value.ToString();
-            //txtName.Text = dg1.CurrentRow.Cells[0].Value.ToString();
-            //dtpDOB.Text = dg1.CurrentRow.Cells[1].Value.ToString();
-
             if (dg1.Rows.Count != 0)
             {
                 dg1.CurrentRow.Selected = true;
@@ -1109,7 +613,6 @@ namespace FinalProject
                         }
                     }
                 }
-
 
                 TextBox[] t = { txtPatientId, txtName, txtGuardName, txtStreet, txtAptNum, txtCity, txtProv, txtZip, txtHomePhoneNum, txtMobilePhoneNum, txtEmpSch, txtEmergName, txtEmergHome, txtEmergMobile, txtInCompany, txtSSNum, txtPolicyNum, txtInsurStreet, txtInsurOfficeNum, txtInsurCity, txtInsurProv, txtInsurZip, txtInsurancePhoneNum, txtFormerDent, txtDentNum, txtDoctor, txtDoctorNum };
                 int iCount = 0;
@@ -1136,7 +639,6 @@ namespace FinalProject
                             else if (dg1.CurrentRow.Cells[4].Value.ToString().Equals("Single"))
                             {
                                 optSingle.Checked = true;
-
                             }
                             else if (dg1.CurrentRow.Cells[4].Value.ToString().Equals("Married"))
                             {
@@ -1157,7 +659,6 @@ namespace FinalProject
                             else if (dg1.CurrentRow.Cells[26].Value.ToString().Equals("Spouse"))
                             {
                                 optSpouse.Checked = true;
-
                             }
                             else if (dg1.CurrentRow.Cells[26].Value.ToString().Equals("Dependent"))
                             {
@@ -1188,7 +689,6 @@ namespace FinalProject
                     }
                     setControlState("u/d");
                 }
-
             }
         }
 
@@ -1201,76 +701,74 @@ namespace FinalProject
             if (validInfo())
             {
                 getOptions();
-               if (validPrimaryKey("i")) 
+                if (validPrimaryKey("i"))
                 {
-                string connStr = "Data Source=(LocalDB)\\v11.0;AttachDbFilename=|DataDirectory|\\Database.mdf;Integrated Security=True";
-                SqlConnection conn = new SqlConnection(connStr);
-                conn.Open();
-                SqlCommand cmd = new SqlCommand();
-                cmd.Connection = conn;
-                string sql = "SELECT [id] FROM [Patients] WHERE [id] = '" + txtPatientId.Text + "'";
-                cmd.CommandText = sql;
-                DataRow dr = ds.Tables["Patients"].NewRow();
-                SqlDataReader dataReader = cmd.ExecuteReader();
+                    string connStr = "Data Source=(LocalDB)\\v11.0;AttachDbFilename=|DataDirectory|Database.mdf;Integrated Security=True";
+                    SqlConnection conn = new SqlConnection(connStr);
+                    conn.Open();
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.Connection = conn;
+                    string sql = "SELECT [id] FROM [Patients] WHERE [id] = '" + txtPatientId.Text + "'";
+                    cmd.CommandText = sql;
+                    DataRow dr = ds.Tables["Patients"].NewRow();
+                    SqlDataReader dataReader = cmd.ExecuteReader();
 
-                if (dataReader.HasRows)
-                {
-                    dataReader.Close();
-                    conn.Close();
-
+                    if (dataReader.HasRows)
+                    {
+                        dataReader.Close();
+                        conn.Close();
+                    }
+                    else
+                    {
+                        dr["id"] = Convert.ToInt32(txtPatientId.Text);
+                        int iCount = 0;
+                        for (int i = 0; i < columns.Length; i++)
+                        {
+                            if (i == 2)
+                            {
+                                dr[columns[i]] = dtpDOB.Text.ToString();
+                            }
+                            else if (i == 3)
+                            {
+                                dr[columns[i]] = gender;
+                            }
+                            else if (i == 4)
+                            {
+                                dr[columns[i]] = marital;
+                            }
+                            else if (i == 27)
+                            {
+                                dr[columns[i]] = relation;
+                            }
+                            else if (i == 30)
+                            {
+                                dr[columns[i]] = dentConsent;
+                            }
+                            else if (i == 33)
+                            {
+                                dr[columns[i]] = physConsent;
+                            }
+                            else
+                            {
+                                dr[columns[i]] = t[iCount].Text;
+                                iCount++;
+                            }
+                        }
+                        ds.Tables["Patients"].Rows.Add(dr);
+                        da.Update(ds, "Patients");
+                        formatGrid();
+                        clearText();
+                    }
                 }
                 else
                 {
-                    dr["id"] = Convert.ToInt32(txtPatientId.Text);
-                    int iCount = 0;
-                    for (int i = 0; i < columns.Length; i++)
-                    {
-                        if (i == 2)
-                        {
-                            dr[columns[i]] = dtpDOB.Text.ToString();
-                           
-                        }
-                        else if (i == 3)
-                        {
-                            dr[columns[i]] = gender;
-                        }
-                        else if (i == 4)
-                        {
-                            dr[columns[i]] = marital;
-                        }
-                        else if (i == 27)
-                        {
-                            dr[columns[i]] = relation;
-                        }
-                        else if (i == 30)
-                        {
-                            dr[columns[i]] = dentConsent;
-                        }
-                        else if (i == 33)
-                        {
-                            dr[columns[i]] = physConsent;
-                        }
-                        else
-                        {
-                            dr[columns[i]] = t[iCount].Text;
-                            iCount++;
-                        }
-                    }
-                    ds.Tables["Patients"].Rows.Add(dr);
-                    da.Update(ds, "Patients");
-                    formatGrid();
-                    clearText();
+                    return;
                 }
             }
-            else
-            {
-                return;
-            }
-        } 
-    }
+        }
+
         private void cmdUpdate_Click(object sender, EventArgs e)
         {
-            
             string[] columns = { "id", "Name", "DOB", "Gender", "MaritalStatus", "GuardianName", "AStreet", "AAptNum", "ACity", "AProvince", "AZip", "HomePhone", "MobilePhone", "Employer", "EmergName", "EmergHome", "EmergMobile", "InCompany", "SSNum", "PolicyNum", "InStreet", "InOffNum", "InCity", "InProvince", "InZip", "PolicyNum", "InPhone", "Relationship", "DentName", "DentPhone", "DentConsent", "PhysName", "PhysPhone", "PhysConsent" }
         ;
 
@@ -1312,7 +810,6 @@ namespace FinalProject
                         }
                         else
                         {
-
                             dr[columns[i]] = t[iCount].Text;
                             iCount++;
                         }
@@ -1324,7 +821,6 @@ namespace FinalProject
                     dg1.ClearSelection();
                 }
             }
-            
         }
 
         private void cmdDelete_Click(object sender, EventArgs e)
@@ -1337,7 +833,7 @@ namespace FinalProject
                     da.Update(ds, "Patients");
                 }
             }
-            catch(IndexOutOfRangeException)
+            catch (IndexOutOfRangeException)
             {
                 MessageBox.Show("No Record Selected!", "Delete Record Error");
                 return;
@@ -1346,7 +842,6 @@ namespace FinalProject
             formatGrid();
             dg1.ClearSelection();
         }
-    
 
         private void clearText()
         {
@@ -1366,16 +861,16 @@ namespace FinalProject
 
         private bool validPrimaryKey(String state)
         {
-             if (state.Equals("i"))
+            if (state.Equals("i"))
             {
-                 for (int i = 0; i < dg1.Rows.Count; i++)
-                 {
-                  if (txtPatientId.Text.Equals(dg1.Rows[i].Cells[0].Value.ToString()))
-                  {
-                      MessageBox.Show("This Patient ID exists. Enter a unique Patient ID number.", "Primary Key Violation", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                      txtPatientId.Focus();
-                      return false;
-                  }                    
+                for (int i = 0; i < dg1.Rows.Count; i++)
+                {
+                    if (txtPatientId.Text.Equals(dg1.Rows[i].Cells[0].Value.ToString()))
+                    {
+                        MessageBox.Show("This Patient ID exists. Enter a unique Patient ID number.", "Primary Key Violation", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        txtPatientId.Focus();
+                        return false;
+                    }
                 }
                 return true;
             }
@@ -1408,7 +903,7 @@ namespace FinalProject
             //id
             if (txtPatientId.Text.Length < 1)
             {
-                 MessageBox.Show("Valid Patient Id Required", "Invalid Id", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Valid Patient Id Required", "Invalid Id", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtPatientId.Focus();
                 return false;
             }
@@ -1418,7 +913,6 @@ namespace FinalProject
                 MessageBox.Show("Name is required with 3 minimum letters", "Invalid Name", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtName.Focus();
                 return false;
-
             }
             if (txtName.Text.Length > 1)
             {
@@ -1504,7 +998,12 @@ namespace FinalProject
             }
             else
             {
-                validProv(txtProv.Text);
+                if (validProv(txtProv.Text) != true)
+                {
+                    MessageBox.Show("Province Must Be The Provinces Two Letter Idetification Code", "Insurance Address Format", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtProv.Focus();
+                    return false;
+                }
             }
             //zip
             if (txtZip.Text.Length < 7)
@@ -1512,7 +1011,6 @@ namespace FinalProject
                 MessageBox.Show("Zip Code is required with 6 digits and a space exactly", "Invalid Phone Number", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtZip.Focus();
                 return false;
-
             }
             //home phone
             if (txtHomePhoneNum.Text.Length < 11)
@@ -1520,7 +1018,6 @@ namespace FinalProject
                 MessageBox.Show("Home Phone Number is required with 10 digits exactly", "Invalid Phone Number", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtHomePhoneNum.Focus();
                 return false;
-
             }
             //mobile
             if (txtMobilePhoneNum.Text.Length < 11)
@@ -1528,7 +1025,6 @@ namespace FinalProject
                 MessageBox.Show("Mobile Phone Number is required with 10 digits exactly", "Invalid Phone Number", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtMobilePhoneNum.Focus();
                 return false;
-
             }
             //employer or school
             //not required
@@ -1539,7 +1035,6 @@ namespace FinalProject
                 MessageBox.Show("Emergency Name is required with 3 minimum letters", "Invalid Name", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtEmergName.Focus();
                 return false;
-
             }
             if (txtEmergName.Text.Length > 1)
             {
@@ -1582,15 +1077,15 @@ namespace FinalProject
             if (txtSSNum.Text.Length < 10)
             {
                 MessageBox.Show("Policy Holders Social Secuirty Number Must Be 9 Numbers In Length And Match ### ### ### Format", "SSN Format", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtProv.Focus();
+                txtSSNum.Focus();
                 return false;
             }
-            else if (txtSSNum.Text.Length == 11)
+            if (txtSSNum.Text.Length == 11)
             {
-                if (!validSin())
+                if (validSin() != true)
                 {
                     MessageBox.Show("Policy Holders Social Secuirty Number Must Be Valid", "SSN Format", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    txtProv.Focus();
+                    txtSSNum.Focus();
                     return false;
                 }
             }
@@ -1647,7 +1142,12 @@ namespace FinalProject
             }
             else
             {
-                validProv(txtInsurProv.Text);
+                if (validProv(txtInsurProv.Text) != true)
+                {
+                    MessageBox.Show("The Province Of Insurance Company Must Be The Provinces Two Letter Idetification Code", "Insurance Address Format", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtInsurProv.Focus();
+                    return false;
+                }
             }
             //zip
             if (txtInsurZip.Text.Length < 7)
@@ -1655,7 +1155,6 @@ namespace FinalProject
                 MessageBox.Show("Zip Code of the insurance company is required with 6 digits and a space exactly", "Invalid Phone Number", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtInsurZip.Focus();
                 return false;
-
             }
             //company phone number
             if (txtInsurancePhoneNum.Text.Length < 11)
@@ -1664,13 +1163,12 @@ namespace FinalProject
                 txtInsurancePhoneNum.Focus();
                 return false;
             }
-            //former dentist 
+            //former dentist
             if (txtFormerDent.Text.Length <= 1)
             {
                 MessageBox.Show("Former Dentist Name is required with 3 minimum letters", "Invalid Name", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtFormerDent.Focus();
                 return false;
-
             }
             if (txtFormerDent.Text.Length > 1)
             {
@@ -1700,7 +1198,6 @@ namespace FinalProject
                 MessageBox.Show("Doctors Name is required with 3 minimum letters", "Invalid Name", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtDoctor.Focus();
                 return false;
-
             }
             if (txtDoctor.Text.Length > 1)
             {
@@ -1726,6 +1223,7 @@ namespace FinalProject
             }
             return true;
         }
+
         private bool validProv(string prov)
         {
             string[] testProvs = { "ON", "QC", "NS", "NB", "MB", "BC", "PE", "SK", "AB", "NL", "NT", "YT", "NU" };
@@ -1738,54 +1236,53 @@ namespace FinalProject
             }
             return false;
         }
+
         private bool validSin()
         {
-            char[] ssNum = (txtSSNum.Text).ToCharArray();
-            int num1 = int.Parse("" + ssNum[0]) * 1;
-            int num2 = int.Parse("" + ssNum[1]) * 2;
-            int num3 = int.Parse("" + ssNum[2]) * 1;
-            int num4 = int.Parse("" + ssNum[4]) * 2;
-            int num5 = int.Parse("" + ssNum[5]) * 1;
-            int num6 = int.Parse("" + ssNum[6]) * 2;
-            int num7 = int.Parse("" + ssNum[8]) * 1;
-            int num8 = int.Parse("" + ssNum[9]) * 2;
-            int num9 = int.Parse("" + ssNum[10]) * 1;
+            int num1 = Convert.ToInt32(txtSSNum.Text.ToString().Substring(0, 1)) * 1;
+            int num2 = Convert.ToInt32(txtSSNum.Text.ToString().Substring(1, 1)) * 2;
+            int num3 = Convert.ToInt32(txtSSNum.Text.ToString().Substring(2, 1)) * 1;
+            int num4 = Convert.ToInt32(txtSSNum.Text.ToString().Substring(4, 1)) * 2;
+            int num5 = Convert.ToInt32(txtSSNum.Text.ToString().Substring(5, 1)) * 1;
+            int num6 = Convert.ToInt32(txtSSNum.Text.ToString().Substring(6, 1)) * 2;
+            int num7 = Convert.ToInt32(txtSSNum.Text.ToString().Substring(8, 1)) * 1;
+            int num8 = Convert.ToInt32(txtSSNum.Text.ToString().Substring(9, 1)) * 2;
+            int num9 = Convert.ToInt32(txtSSNum.Text.ToString().Substring(10, 1)) * 1;
             if (num1 > 9)
             {
-
-                num1 = int.Parse("" + num1.ToString()[0]) + int.Parse("" + (num1.ToString()[1]));
+                num1 = num1 - 9;
             }
-            else if (num2 > 9)
+            if (num2 > 9)
             {
-                num2 = int.Parse("" + num2.ToString()[0]) + int.Parse("" + (num2.ToString()[1]));
+                num2 = num2 - 9;
             }
-            else if (num3 > 9)
+            if (num3 > 9)
             {
-                num3 = int.Parse("" + num3.ToString()[0]) + int.Parse("" + (num3.ToString()[1]));
+                num3 = num3 - 9;
             }
-            else if (num4 > 9)
+            if (num4 > 9)
             {
-                num4 = int.Parse("" + num4.ToString()[0]) + int.Parse("" + (num4.ToString()[1]));
+                num4 = num4 - 9;
             }
-            else if (num5 > 9)
+            if (num5 > 9)
             {
-                num5 = int.Parse("" + num5.ToString()[0]) + int.Parse("" + (num5.ToString()[1]));
+                num5 = num5 - 9;
             }
-            else if (num6 > 9)
+            if (num6 > 9)
             {
-                num6 = int.Parse("" + num6.ToString()[0]) + int.Parse("" + (num6.ToString()[1]));
+                num6 = num6 - 9;
             }
-            else if (num7 > 9)
+            if (num7 > 9)
             {
-                num7 = int.Parse("" + num7.ToString()[0]) + int.Parse("" + (num7.ToString()[1]));
+                num7 = num7 - 9;
             }
-            else if (num8 > 9)
+            if (num8 > 9)
             {
-                num8 = int.Parse("" + num8.ToString()[0]) + int.Parse("" + (num8.ToString()[1]));
+                num8 = num8 - 9;
             }
-            else if (num9 > 9)
+            if (num9 > 9)
             {
-                num9 = int.Parse("" + num9.ToString()[0]) + int.Parse("" + (num9.ToString()[1]));
+                num9 = num9 - 9;
             }
             int fin = num1 + num2 + num3 + num4 + num5 + num6 + num7 + num8 + num9;
             if (fin % 10 != 0)
@@ -1794,12 +1291,10 @@ namespace FinalProject
             }
             return true;
         }
-        /////////database stuff
-        
+
         private void getData()
         {
-
-            string connStr = "Data Source=(LocalDB)\\v11.0;AttachDbFilename=|DataDirectory|\\Database.mdf;Integrated Security=True;Connect Timeout=10";
+            string connStr = "Data Source=(LocalDB)\\v11.0;AttachDbFilename=|DataDirectory|Database.mdf;Integrated Security=True;";
             try
             {
                 conn = new SqlConnection(connStr);
@@ -1819,7 +1314,6 @@ namespace FinalProject
             }
             catch (SqlException ex)
             {
-
                 if (conn != null)
                 {
                     conn.Close();
@@ -1827,69 +1321,67 @@ namespace FinalProject
                 MessageBox.Show(ex.Message, "Error Reading Data");
             }
         }
+
         private void getOptions()
         {
             //gender
-                
-                if (optMale.Checked)
-                {
-                    gender = "Male";
-                }
-                if (optFemale.Checked)
-                {
-                    gender = "Female";
-                }
-                //Marital Status
-                
-                if (optChild.Checked)
-                {
-                    marital = "Child";
-                }
-                if (optSingle.Checked)
-                {
-                    marital = "Single";
-                }
-                if (optMarried.Checked)
-                {
-                    marital = "Married";
-                }
-                if (optDivorced.Checked)
-                {
-                    marital = "Divorced";
-                }
-                if (optWidow.Checked)
-                {
-                    marital = "Widow";
-                }
-                //relationship
-                
-                if (optSelf.Checked)
-                {
-                    relation = "Self";
-                }
-                if (optSpouse.Checked)
-                {
-                    relation = "Spouse";
-                }
-                if (optDependent.Checked)
-                {
-                    relation = "Dependant";
-                }
-                //dent consent
-                
-                if (chkDentConsent.Checked)
-                {
-                    dentConsent = "Yes";
-                }
-                //Phys consent
-               
-                if (chkDocConsent.Checked)
-                {
-                    physConsent = "Yes";
-                }
 
+            if (optMale.Checked)
+            {
+                gender = "Male";
+            }
+            if (optFemale.Checked)
+            {
+                gender = "Female";
+            }
+            //Marital Status
 
+            if (optChild.Checked)
+            {
+                marital = "Child";
+            }
+            if (optSingle.Checked)
+            {
+                marital = "Single";
+            }
+            if (optMarried.Checked)
+            {
+                marital = "Married";
+            }
+            if (optDivorced.Checked)
+            {
+                marital = "Divorced";
+            }
+            if (optWidow.Checked)
+            {
+                marital = "Widow";
+            }
+            //relationship
 
+            if (optSelf.Checked)
+            {
+                relation = "Self";
+            }
+            if (optSpouse.Checked)
+            {
+                relation = "Spouse";
+            }
+            if (optDependent.Checked)
+            {
+                relation = "Dependant";
+            }
+            //dent consent
+
+            if (chkDentConsent.Checked)
+            {
+                dentConsent = "Yes";
+            }
+            //Phys consent
+
+            if (chkDocConsent.Checked)
+            {
+                physConsent = "Yes";
+            }
         }
 
         private void formatGrid()
@@ -1899,7 +1391,7 @@ namespace FinalProject
 
         private void setControlState(string state)
         {
-            if(state.Equals("i"))
+            if (state.Equals("i"))
             {
                 clearText();
                 txtPatientId.Enabled = true;
@@ -1922,37 +1414,6 @@ namespace FinalProject
                 cmdDelete.Show();
                 cmdInsert.Hide();
             }
-        }
-
-        private void test()//for testing
-        {
-            txtPatientId.Text = Convert.ToString(rowIndex);
-            txtName.Text = "Dakota Mccutcheon";
-            txtGuardName.Text = "Joe Mann";
-            txtStreet.Text = "123 Road";
-            txtCity.Text = "Hali";
-            txtAptNum.Text = "123";
-            txtProv.Text = "ON";
-            txtZip.Text = "987 987";
-            txtHomePhoneNum.Text = "987-987-9879";
-            txtMobilePhoneNum.Text = "987-987-9879";
-            txtEmpSch.Text = "Yes";
-            txtEmergName.Text = "Jim Mann";
-            txtEmergHome.Text = "987-987-9879";
-            txtEmergMobile.Text = "987-987-9879";
-            txtInCompany.Text = "Yes";
-            txtSSNum.Text = "046 454 286";
-            txtPolicyNum.Text = "45";
-            txtInsurStreet.Text = "123 Street";
-            txtInsurCity.Text = "Hali";
-            txtInsurOfficeNum.Text = "123";
-            txtInsurProv.Text = "ON";
-            txtInsurZip.Text = "987 987";
-            txtInsurancePhoneNum.Text = "987-987-9879";
-            txtFormerDent.Text = "Yes Mann";
-            txtDentNum.Text = "987-987-9879";
-            txtDoctor.Text = "No Mann";
-            txtDoctorNum.Text = "987-987-9879";
         }
     }
 }

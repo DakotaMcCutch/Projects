@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.lblName = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
             this.lblBirth = new System.Windows.Forms.Label();
@@ -106,11 +107,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtPatientId = new System.Windows.Forms.TextBox();
             this.lblInsertMessage = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dg1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblName
@@ -125,6 +129,7 @@
             // txtName
             // 
             this.txtName.Location = new System.Drawing.Point(15, 84);
+            this.txtName.MaxLength = 50;
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(202, 20);
             this.txtName.TabIndex = 2;
@@ -146,7 +151,6 @@
             this.dtpDOB.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.dtpDOB.Size = new System.Drawing.Size(200, 20);
             this.dtpDOB.TabIndex = 3;
-            this.dtpDOB.TabStop = false;
             this.dtpDOB.Value = new System.DateTime(2014, 11, 2, 0, 0, 0, 0);
             // 
             // lblGender
@@ -202,6 +206,7 @@
             // txtGuardName
             // 
             this.txtGuardName.Location = new System.Drawing.Point(15, 235);
+            this.txtGuardName.MaxLength = 50;
             this.txtGuardName.Name = "txtGuardName";
             this.txtGuardName.Size = new System.Drawing.Size(202, 20);
             this.txtGuardName.TabIndex = 13;
@@ -227,6 +232,7 @@
             // txtStreet
             // 
             this.txtStreet.Location = new System.Drawing.Point(15, 274);
+            this.txtStreet.MaxLength = 20;
             this.txtStreet.Name = "txtStreet";
             this.txtStreet.Size = new System.Drawing.Size(100, 20);
             this.txtStreet.TabIndex = 14;
@@ -234,6 +240,7 @@
             // txtCity
             // 
             this.txtCity.Location = new System.Drawing.Point(227, 274);
+            this.txtCity.MaxLength = 20;
             this.txtCity.Name = "txtCity";
             this.txtCity.Size = new System.Drawing.Size(100, 20);
             this.txtCity.TabIndex = 16;
@@ -249,6 +256,7 @@
             // txtZip
             // 
             this.txtZip.Location = new System.Drawing.Point(439, 273);
+            this.txtZip.MaxLength = 7;
             this.txtZip.Name = "txtZip";
             this.txtZip.Size = new System.Drawing.Size(100, 20);
             this.txtZip.TabIndex = 18;
@@ -309,6 +317,7 @@
             // txtEmpSch
             // 
             this.txtEmpSch.Location = new System.Drawing.Point(15, 353);
+            this.txtEmpSch.MaxLength = 50;
             this.txtEmpSch.Name = "txtEmpSch";
             this.txtEmpSch.Size = new System.Drawing.Size(217, 20);
             this.txtEmpSch.TabIndex = 21;
@@ -325,6 +334,7 @@
             // txtEmergName
             // 
             this.txtEmergName.Location = new System.Drawing.Point(15, 422);
+            this.txtEmergName.MaxLength = 50;
             this.txtEmergName.Name = "txtEmergName";
             this.txtEmergName.Size = new System.Drawing.Size(217, 20);
             this.txtEmergName.TabIndex = 22;
@@ -385,8 +395,9 @@
             // txtInCompany
             // 
             this.txtInCompany.Location = new System.Drawing.Point(15, 534);
+            this.txtInCompany.MaxLength = 50;
             this.txtInCompany.Name = "txtInCompany";
-            this.txtInCompany.Size = new System.Drawing.Size(100, 20);
+            this.txtInCompany.Size = new System.Drawing.Size(173, 20);
             this.txtInCompany.TabIndex = 25;
             // 
             // lblSSNum
@@ -418,6 +429,7 @@
             // txtInsurZip
             // 
             this.txtInsurZip.Location = new System.Drawing.Point(440, 651);
+            this.txtInsurZip.MaxLength = 7;
             this.txtInsurZip.Name = "txtInsurZip";
             this.txtInsurZip.Size = new System.Drawing.Size(100, 20);
             this.txtInsurZip.TabIndex = 32;
@@ -425,6 +437,7 @@
             // txtInsurProv
             // 
             this.txtInsurProv.Location = new System.Drawing.Point(334, 651);
+            this.txtInsurProv.MaxLength = 2;
             this.txtInsurProv.Name = "txtInsurProv";
             this.txtInsurProv.Size = new System.Drawing.Size(100, 20);
             this.txtInsurProv.TabIndex = 31;
@@ -432,6 +445,7 @@
             // txtInsurCity
             // 
             this.txtInsurCity.Location = new System.Drawing.Point(228, 651);
+            this.txtInsurCity.MaxLength = 20;
             this.txtInsurCity.Name = "txtInsurCity";
             this.txtInsurCity.Size = new System.Drawing.Size(100, 20);
             this.txtInsurCity.TabIndex = 30;
@@ -439,6 +453,7 @@
             // txtInsurStreet
             // 
             this.txtInsurStreet.Location = new System.Drawing.Point(15, 651);
+            this.txtInsurStreet.MaxLength = 20;
             this.txtInsurStreet.Name = "txtInsurStreet";
             this.txtInsurStreet.Size = new System.Drawing.Size(100, 20);
             this.txtInsurStreet.TabIndex = 28;
@@ -455,8 +470,9 @@
             // txtPolicyNum
             // 
             this.txtPolicyNum.Location = new System.Drawing.Point(15, 612);
+            this.txtPolicyNum.MaxLength = 20;
             this.txtPolicyNum.Name = "txtPolicyNum";
-            this.txtPolicyNum.Size = new System.Drawing.Size(100, 20);
+            this.txtPolicyNum.Size = new System.Drawing.Size(127, 20);
             this.txtPolicyNum.TabIndex = 27;
             // 
             // lblInsurancePhoneNum
@@ -547,6 +563,7 @@
             // txtFormerDent
             // 
             this.txtFormerDent.Location = new System.Drawing.Point(15, 813);
+            this.txtFormerDent.MaxLength = 50;
             this.txtFormerDent.Name = "txtFormerDent";
             this.txtFormerDent.Size = new System.Drawing.Size(126, 20);
             this.txtFormerDent.TabIndex = 38;
@@ -580,6 +597,7 @@
             // txtDoctor
             // 
             this.txtDoctor.Location = new System.Drawing.Point(13, 876);
+            this.txtDoctor.MaxLength = 50;
             this.txtDoctor.Name = "txtDoctor";
             this.txtDoctor.Size = new System.Drawing.Size(127, 20);
             this.txtDoctor.TabIndex = 41;
@@ -740,6 +758,7 @@
             // txtAptNum
             // 
             this.txtAptNum.Location = new System.Drawing.Point(121, 274);
+            this.txtAptNum.MaxLength = 9;
             this.txtAptNum.Name = "txtAptNum";
             this.txtAptNum.Size = new System.Drawing.Size(100, 20);
             this.txtAptNum.TabIndex = 15;
@@ -747,6 +766,7 @@
             // txtInsurOfficeNum
             // 
             this.txtInsurOfficeNum.Location = new System.Drawing.Point(121, 651);
+            this.txtInsurOfficeNum.MaxLength = 9;
             this.txtInsurOfficeNum.Name = "txtInsurOfficeNum";
             this.txtInsurOfficeNum.Size = new System.Drawing.Size(100, 20);
             this.txtInsurOfficeNum.TabIndex = 29;
@@ -792,7 +812,25 @@
             this.lblInsertMessage.Name = "lblInsertMessage";
             this.lblInsertMessage.Size = new System.Drawing.Size(390, 23);
             this.lblInsertMessage.TabIndex = 68;
-            this.lblInsertMessage.Visible = false;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Location = new System.Drawing.Point(340, 4);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(200, 191);
+            this.groupBox1.TabIndex = 69;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Province Codes";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 18);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(165, 169);
+            this.label3.TabIndex = 0;
+            this.label3.Text = resources.GetString("label3.Text");
             // 
             // Form1
             // 
@@ -800,6 +838,7 @@
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.ClientSize = new System.Drawing.Size(1184, 937);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.lblInsertMessage);
             this.Controls.Add(this.txtPatientId);
             this.Controls.Add(this.label2);
@@ -881,6 +920,8 @@
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dg1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -965,6 +1006,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtPatientId;
         private System.Windows.Forms.Label lblInsertMessage;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label3;
     }
 }
 
