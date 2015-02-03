@@ -31,21 +31,21 @@ namespace FinalProject
             dtpDOB.Text = DateTime.Today.ToString();
             dtpDOB.CustomFormat = "MM/dd/yyyy";
             dtpDOB.Format = DateTimePickerFormat.Custom;
-            //dg1.ColumnHeadersDefaultCellStyle.BackColor = Properties.Settings.Default.headerBack;
-            //dg1.ColumnHeadersDefaultCellStyle.ForeColor = Properties.Settings.Default.headerFore;
-            //dg1.RowHeadersDefaultCellStyle.BackColor = Properties.Settings.Default.headerBack;
-            //dg1.RowHeadersDefaultCellStyle.ForeColor = Properties.Settings.Default.headerFore;
-            //dg1.RowHeadersDefaultCellStyle.SelectionBackColor = Properties.Settings.Default.selectionHeaderBack;
-            //dg1.RowHeadersDefaultCellStyle.SelectionForeColor = Properties.Settings.Default.selectionHeaderFore;
-            //dg1.DefaultCellStyle.BackColor = Properties.Settings.Default.cellBack;
-            //dg1.DefaultCellStyle.ForeColor = Properties.Settings.Default.cellFore;
-            //dg1.DefaultCellStyle.SelectionBackColor = Properties.Settings.Default.selectionCellBack;
-            //dg1.DefaultCellStyle.SelectionForeColor = Properties.Settings.Default.selectionCellFore;
-            //this.BackColor = Properties.Settings.Default.backColor;
-            //this.ForeColor = Properties.Settings.Default.foreColor;
-            //cmdInsert.ForeColor = SystemColors.ControlText;
-            //cmdUpdate.ForeColor = SystemColors.ControlText;
-            //cmdUpdate.ForeColor = SystemColors.ControlText;
+            dg1.ColumnHeadersDefaultCellStyle.BackColor = Properties.Settings.Default.headerBack;
+            dg1.ColumnHeadersDefaultCellStyle.ForeColor = Properties.Settings.Default.headerFore;
+            dg1.RowHeadersDefaultCellStyle.BackColor = Properties.Settings.Default.headerBack;
+            dg1.RowHeadersDefaultCellStyle.ForeColor = Properties.Settings.Default.headerFore;
+            dg1.RowHeadersDefaultCellStyle.SelectionBackColor = Properties.Settings.Default.selectionHeaderBack;
+            dg1.RowHeadersDefaultCellStyle.SelectionForeColor = Properties.Settings.Default.selectionHeaderFore;
+            dg1.DefaultCellStyle.BackColor = Properties.Settings.Default.cellBack;
+            dg1.DefaultCellStyle.ForeColor = Properties.Settings.Default.cellFore;
+            dg1.DefaultCellStyle.SelectionBackColor = Properties.Settings.Default.selectionCellBack;
+            dg1.DefaultCellStyle.SelectionForeColor = Properties.Settings.Default.selectionCellFore;
+            this.BackColor = Properties.Settings.Default.backColor;
+            this.ForeColor = Properties.Settings.Default.foreColor;
+            cmdInsert.ForeColor = SystemColors.ControlText;
+            cmdUpdate.ForeColor = SystemColors.ControlText;
+            cmdUpdate.ForeColor = SystemColors.ControlText;
             cmdDelete.ForeColor = SystemColors.ControlText;
         }
 

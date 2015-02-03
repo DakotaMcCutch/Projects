@@ -106,9 +106,9 @@
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.label2 = new System.Windows.Forms.Label();
             this.txtPatientId = new System.Windows.Forms.TextBox();
-            this.lblInsertMessage = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.lblInsertMessage = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -775,7 +775,7 @@
             // 
             this.dg1.AllowUserToAddRows = false;
             this.dg1.AllowUserToDeleteRows = false;
-            this.dg1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.dg1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dg1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dg1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dg1.Cursor = System.Windows.Forms.Cursors.Arrow;
@@ -805,14 +805,6 @@
             this.txtPatientId.Size = new System.Drawing.Size(83, 20);
             this.txtPatientId.TabIndex = 1;
             // 
-            // lblInsertMessage
-            // 
-            this.lblInsertMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInsertMessage.Location = new System.Drawing.Point(772, 903);
-            this.lblInsertMessage.Name = "lblInsertMessage";
-            this.lblInsertMessage.Size = new System.Drawing.Size(390, 23);
-            this.lblInsertMessage.TabIndex = 68;
-            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.label3);
@@ -831,6 +823,14 @@
             this.label3.Size = new System.Drawing.Size(165, 169);
             this.label3.TabIndex = 0;
             this.label3.Text = resources.GetString("label3.Text");
+            // 
+            // lblInsertMessage
+            // 
+            this.lblInsertMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInsertMessage.Location = new System.Drawing.Point(772, 903);
+            this.lblInsertMessage.Name = "lblInsertMessage";
+            this.lblInsertMessage.Size = new System.Drawing.Size(390, 23);
+            this.lblInsertMessage.TabIndex = 68;
             // 
             // Form1
             // 
@@ -1005,9 +1005,9 @@
         private System.Windows.Forms.BindingSource bindingSource1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtPatientId;
-        private System.Windows.Forms.Label lblInsertMessage;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblInsertMessage;
     }
 }
 
