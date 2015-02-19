@@ -31,6 +31,8 @@ namespace FinalProject
             dtpDOB.Text = DateTime.Today.ToString();
             dtpDOB.CustomFormat = "MM/dd/yyyy";
             dtpDOB.Format = DateTimePickerFormat.Custom;
+            //removed until polished and theme controls are enabled
+            /*
             dg1.ColumnHeadersDefaultCellStyle.BackColor = Properties.Settings.Default.headerBack;
             dg1.ColumnHeadersDefaultCellStyle.ForeColor = Properties.Settings.Default.headerFore;
             dg1.RowHeadersDefaultCellStyle.BackColor = Properties.Settings.Default.headerBack;
@@ -47,6 +49,7 @@ namespace FinalProject
             cmdUpdate.ForeColor = SystemColors.ControlText;
             cmdUpdate.ForeColor = SystemColors.ControlText;
             cmdDelete.ForeColor = SystemColors.ControlText;
+             * */
         }
 
         private void Form1_Load(object sender, EventArgs e)
